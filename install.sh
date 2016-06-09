@@ -54,6 +54,7 @@ cd $dir
 
 mkdir -p "${HOME}/.gnupg"
 mkdir -p "${HOME}/.config/systemd/user"
+mkdir -p "${HOME}/.i3"
 
 # Backing up config files
 Backup "${HOME}/.zshrc"
@@ -63,6 +64,9 @@ Backup "${HOME}/.vimrc"
 Backup "${HOME}/.gnupg/gpg.conf"
 Backup "${HOME}/.gnupg/gpg-agent.conf"
 Backup "${HOME}/.config/systemd/user/gpg-agent.service"
+Backup "${HOME}/.i3/config"
+Backup "${HOME}/.i3/i3status.conf"
+Backup "${HOME}/.i3/lock.sh"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -86,6 +90,15 @@ ln -s "${dir}/gnupg/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 ErrExit
 echo "Installing gpg-agent.service"
 cp "${dir}/gnupg/gpg-agent.service" "${HOME}/.config/systemd/user/gpg-agent.service"
+ErrExit
+echo "Installing i3 config"
+ln -s "${dir}/i3/config" "${HOME}/.i3/config"
+ErrExit
+echo "Installling i3 status config"
+ln -s "${dir}/i3/i3status.conf" "${HOME}/.i3/i3status.conf"
+ErrExit
+echo "Installing lock.sh"
+ln -s "${dir}/i3/lock.sh" "${HOME}/.i3/lock.sh"
 ErrExit
 
 echo "Enabling gpg-agent.service"
