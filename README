@@ -1,0 +1,9 @@
+Les dependances sont:
+	* python2
+	* python2-pip
+	* gnupg
+	* scrot
+	* feh
+	* imagemagick
+	* j4-menu-desktop
+	* systemd
