@@ -67,6 +67,7 @@ Backup "${HOME}/.config/systemd/user/gpg-agent.service"
 Backup "${HOME}/.i3/config"
 Backup "${HOME}/.i3/i3status.conf"
 Backup "${HOME}/.i3/lock.sh"
+Backup "${HOME}/.Xdefaults"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -100,6 +101,10 @@ ErrExit
 echo "Installing lock.sh"
 ln -s "${dir}/i3/lock.sh" "${HOME}/.i3/lock.sh"
 ErrExit
+echo "Installing Xdefaults"
+ln -s "${dir}/Xdefaults" "${HOME}/.Xdefaults"
+ErrExit
+
 
 echo "Enabling gpg-agent.service"
 systemctl --user enable gpg-agent.service
