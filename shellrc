@@ -1,0 +1,24 @@
+# Reset the path...
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/jvm/java-8-openjdk/bin"
+
+export GOPATH=$HOME/.go
+export EDITOR='vim'
+export NNTPSERVER=news.epita.fr
+
+# Alias
+alias xclip='xclip -i -selection clipboard'
+alias gwall='gcc -Wall -Wextra -Werror -std=c99 -pedantic -g3'
+
+# Set SSH to use gpg-agent
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Custom shell config
+source $HOME/.customrc
