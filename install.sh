@@ -68,6 +68,7 @@ Backup "${HOME}/.i3/config"
 Backup "${HOME}/.i3/i3status.conf"
 Backup "${HOME}/.i3/lock.sh"
 Backup "${HOME}/.Xdefaults"
+Backup "${HOME}/.signature"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -103,6 +104,9 @@ ln -s "${dir}/i3/lock.sh" "${HOME}/.i3/lock.sh"
 ErrExit
 echo "Installing Xdefaults"
 ln -s "${dir}/Xdefaults" "${HOME}/.Xdefaults"
+ErrExit
+echo "Installing signature"
+ln -s "${dir}/signature" "${HOME}/.signature"
 ErrExit
 
 
