@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [ -z $PWD ]; then
+	echo Could not detect script location...
+	exit 1
+fi
 
 ErrExit () {
 	if [ "$?" -ne "0" ]; then
@@ -30,13 +36,27 @@ Backup () {
 	return 0
 }
 
-PWD=$(pwd)
+cd $PWD
+echo Updating submodules.
+git submodule update --init --recursive
+ErrExit
+
+echo vim setup
+cd vim
+echo Installing h2cppx dependancies.
+sh ./h2cppx-postinstall.sh
+ErrExit
+
+echo Compiling YouCompleteMe...
+sh ./ycm-compile.sh
+ErrExit
+cd ..
 
 # Backing up config files
 Backup "${HOME}/.zshrc"
-ErrExit
 Backup "${HOME}/.shellrc"
-ErrExit
+Backup "${HOME}/.vim"
+Backup "${HOME}/.vimrc"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -47,3 +67,10 @@ ErrExit
 echo "Installing zshrc"
 ln -s "${PWD}/zshrc" "${HOME}/.zshrc"
 ErrExit
+echo "Installing vim directory"
+ln -s "${PWD}/vim" "${HOME}/.vim"
+echo "Installing vimrc"
+ln -s "${PWD}/vim/vimrc" "${HOME}/.vimrc"
+ErrExit
+
+exit 0
