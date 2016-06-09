@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-if [ -z $PWD ]; then
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [ -z $dir ]; then
 	echo Could not detect script location...
 	exit 1
 fi
@@ -36,7 +36,7 @@ Backup () {
 	return 0
 }
 
-cd $PWD
+cd $dir
 echo Updating submodules.
 git submodule update --init --recursive
 ErrExit
@@ -50,27 +50,51 @@ ErrExit
 echo Compiling YouCompleteMe...
 sh ./ycm-compile.sh
 ErrExit
-cd ..
+cd $dir
+
+mkdir -p "${HOME}/.gnupg"
+mkdir -p "${HOME}/.config/systemd/user"
 
 # Backing up config files
 Backup "${HOME}/.zshrc"
 Backup "${HOME}/.shellrc"
 Backup "${HOME}/.vim"
 Backup "${HOME}/.vimrc"
+Backup "${HOME}/.gnupg/gpg.conf"
+Backup "${HOME}/.gnupg/gpg-agent.conf"
+Backup "${HOME}/.config/systemd/user/gpg-agent.service"
 
 # Installing the new files
 touch "${HOME}/.customrc"
 ErrExit
 echo "Installing shellrc"
-ln -s "${PWD}/shellrc" "${HOME}/.shellrc"
+ln -s "${dir}/shellrc" "${HOME}/.shellrc"
 ErrExit
 echo "Installing zshrc"
-ln -s "${PWD}/zshrc" "${HOME}/.zshrc"
+ln -s "${dir}/zshrc" "${HOME}/.zshrc"
 ErrExit
 echo "Installing vim directory"
-ln -s "${PWD}/vim" "${HOME}/.vim"
+ln -s "${dir}/vim" "${HOME}/.vim"
 echo "Installing vimrc"
-ln -s "${PWD}/vim/vimrc" "${HOME}/.vimrc"
+ln -s "${dir}/vim/vimrc" "${HOME}/.vimrc"
+ErrExit
+echo "Installing gpg.conf"
+ln -s "${dir}/gnupg/gpg.conf" "${HOME}/.gnupg/gpg.conf"
+ErrExit
+echo "Installing gpg-agent.conf"
+ln -s "${dir}/gnupg/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
+ErrExit
+echo "Installing gpg-agent.service"
+cp "${dir}/gnupg/gpg-agent.service" "${HOME}/.config/systemd/user/gpg-agent.service"
+ErrExit
+
+echo "Enabling gpg-agent.service"
+systemctl --user enable gpg-agent.service
+ErrExit
+echo "Killing all instances of gpg-agent"
+killall gpg-agent
+echo "Starting gpg-agent.service"
+systemctl --user start gpg-agent.service
 ErrExit
 
 exit 0
