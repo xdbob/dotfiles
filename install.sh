@@ -69,6 +69,7 @@ Backup "${HOME}/.i3/i3status.conf"
 Backup "${HOME}/.i3/lock.sh"
 Backup "${HOME}/.Xdefaults"
 Backup "${HOME}/.signature"
+Backup "${HOME}/.oh-my-zsh"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -79,6 +80,8 @@ ErrExit
 echo "Installing zshrc"
 ln -s "${dir}/zshrc" "${HOME}/.zshrc"
 ErrExit
+echo "Installing Oh My Zsh"
+ln -s "${dir}/oh-my-zsh" "${HOME}/.oh-my-zsh"
 echo "Installing vim directory"
 ln -s "${dir}/vim" "${HOME}/.vim"
 echo "Installing vimrc"
