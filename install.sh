@@ -70,6 +70,7 @@ Backup "${HOME}/.i3/lock.sh"
 Backup "${HOME}/.Xdefaults"
 Backup "${HOME}/.signature"
 Backup "${HOME}/.oh-my-zsh"
+Backup "${HOME}/.gitconfig"
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -110,6 +111,9 @@ ln -s "${dir}/Xdefaults" "${HOME}/.Xdefaults"
 ErrExit
 echo "Installing signature"
 ln -s "${dir}/signature" "${HOME}/.signature"
+ErrExit
+echo "Installing gitconfig"
+ln -s "${dir}/gitconfig" "${HOME}/.gitconfig"
 ErrExit
 
 
