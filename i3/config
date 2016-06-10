@@ -50,6 +50,7 @@ bindsym $mod+d exec j4-dmenu-desktop
 
 # lockscreen
 bindsym $mod+l exec --no-startup-id ~/.i3/lock.sh
+bindsym $mod+k exec --no-startup-id ~/.i3/lock.sh screen
 
 # change focus
 # bindsym $mod+j focus left
