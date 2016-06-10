@@ -6,6 +6,10 @@ if [ -z $dir ]; then
 	exit 1
 fi
 
+tmpdir="$( mktemp -d )"
+backdir="dotfiles-back"
+mkdir -p ${tmpdir}/${backdir}
+
 ErrExit () {
 	if [ "$?" -ne "0" ]; then
 		while true; do
@@ -21,16 +25,15 @@ ErrExit () {
 Backup () {
 	echo -n "Backing up $1 ... "
 	if [ -e "$1" ]; then
-		if [ -e "{$1}.back" ]; then
-			echo "The file ${1}.back already exists..."
-			exit 1
+		if [ -L "$1" ]; then
+			rm -f "${1}"
+			echo "Symlink (deleted...)"
 		else
-			mv "$1" "${1}.back"
+			mv ${1} ${tmpdir}/${backdir}
 			ErrExit
-			echo " Done"
+			echo "Done"
 		fi
 	else
-		rm -f "${1}"
 		echo "Nothing to do"
 	fi
 	return 0
@@ -71,6 +74,16 @@ Backup "${HOME}/.Xdefaults"
 Backup "${HOME}/.signature"
 Backup "${HOME}/.oh-my-zsh"
 Backup "${HOME}/.gitconfig"
+
+# Generating backup archives
+cd $tmpdir
+echo "Generating backup archive..."
+tar cjvf ${backdir}.tar.bz2 ${backdir}
+ErrExit
+echo "Copying ${backdir}.tar.bz2 to ${HOME}"
+mv ${backdir}.tar.bz2 ${HOME}
+ErrExit
+cd $dir
 
 # Installing the new files
 touch "${HOME}/.customrc"
@@ -126,4 +139,5 @@ echo "Starting gpg-agent.service"
 systemctl --user start gpg-agent.service
 ErrExit
 
+rm -rf $tmpdir
 exit 0
