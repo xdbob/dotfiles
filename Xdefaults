@@ -43,8 +43,13 @@ URxvt*background: Black
 #
 # Xft: Terminus fonts
 #  Fedora/debian packages: terminus-fonts/xfonts-terminus
-URxvt*font: xft:terminus:pixelsize=15
-URxvt*boldFont: xft:terminus:bold:pixelsize=15
+#URxvt*font: xft:terminus:pixelsize=15
+#URxvt*boldFont: xft:terminus:bold:pixelsize=15
+#
+# Hack font
+# Achlinux : ttf-hack
+URxvt*font: xft:hack:pixelsize=13:antialias=true
+URxvt*boldFont: xft:hack:bold:pixelsize=13:antialias=true
 
 # Traditional fonts - a more traditional font setup in lieu of xft
 #URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
