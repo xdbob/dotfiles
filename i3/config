@@ -30,10 +30,16 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -e zsh
+#bindsym $mod+Return exec urxvt -e zsh
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Change volume
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec j4-dmenu-desktop
@@ -167,3 +173,6 @@ bar {
 #exec --no-startup-id feh --image-bg black --bg-center  ~/.i3/wallpapers/wallpaper.png
 exec ~/.fehbg
 exec --no-startup-id pulseaudio
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xss-lock -- ~/.i3/lock.sh
+exec --no-startup-id unclutter
