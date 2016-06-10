@@ -66,7 +66,6 @@ Backup "${HOME}/.vim"
 Backup "${HOME}/.vimrc"
 Backup "${HOME}/.gnupg/gpg.conf"
 Backup "${HOME}/.gnupg/gpg-agent.conf"
-Backup "${HOME}/.config/systemd/user/gpg-agent.service"
 Backup "${HOME}/.i3/config"
 Backup "${HOME}/.i3/i3status.conf"
 Backup "${HOME}/.i3/lock.sh"
@@ -107,9 +106,6 @@ ErrExit
 echo "Installing gpg-agent.conf"
 ln -s "${dir}/gnupg/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 ErrExit
-echo "Installing gpg-agent.service"
-cp "${dir}/gnupg/gpg-agent.service" "${HOME}/.config/systemd/user/gpg-agent.service"
-ErrExit
 echo "Installing i3 config"
 ln -s "${dir}/i3/config" "${HOME}/.i3/config"
 ErrExit
@@ -127,16 +123,6 @@ ln -s "${dir}/signature" "${HOME}/.signature"
 ErrExit
 echo "Installing gitconfig"
 ln -s "${dir}/gitconfig" "${HOME}/.gitconfig"
-ErrExit
-
-
-echo "Enabling gpg-agent.service"
-systemctl --user enable gpg-agent.service
-ErrExit
-echo "Killing all instances of gpg-agent"
-killall gpg-agent
-echo "Starting gpg-agent.service"
-systemctl --user start gpg-agent.service
 ErrExit
 
 rm -rf $tmpdir
