@@ -1,9 +1,12 @@
 Les dependances sont:
+* Pour i3-wm
+	* scrot
+	* imagemagick
+	* feh
+	* j4-menu-desktop
+	* xorg-xset
+	* xss-lock
+	* unclutter
+* Pour vim
 	* python2
 	* python2-pip
-	* gnupg
-	* scrot
-	* feh
-	* imagemagick
-	* j4-menu-desktop
-	* systemd
