@@ -1,0 +1,24 @@
+[user]
+	email = antoine.damhet@lse.epita.fr
+	name = Antoine Damhet
+
+[color]
+	status = auto
+	ui = true
+	branch = true
+	diff = true
+	interactive = true
+
+[push]
+	default = simple
+	followTags = true
+
+[alias]
+	cm = commit -m
+	co = checkout
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ls = ls-tree -r master --name-only
+	st = status
+
+[pull]
+	rebase = true
