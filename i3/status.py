@@ -15,6 +15,14 @@ status.register("clock",
 # Affiche la charge du processeur
 status.register("load")
 
+# Affiche l'utilisation du CPU (%)
+status.register("cpu_usage")
+
+# Affiche la des infos sur la memoire
+status.register("mem",
+        format="{used_mem}GiB/{total_mem}GiB|{percent_used_mem}%",
+        divisor=1024**3,)
+
 # Show your CPU temperature, if you have a Intel CPU
 status.register("temp",
         format="{temp:.0f}°C",)
