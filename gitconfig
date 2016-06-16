@@ -22,3 +22,6 @@
 
 [pull]
 	rebase = true
+
+[sendemail]
+	smtpserver = smtp.lse.epita.fr
