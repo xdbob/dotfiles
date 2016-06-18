@@ -73,6 +73,7 @@ Backup "${HOME}/.Xdefaults"
 Backup "${HOME}/.signature"
 Backup "${HOME}/.oh-my-zsh"
 Backup "${HOME}/.gitconfig"
+Backup "${HOME}/.dir_colors"
 
 # Generating backup archives
 cd $tmpdir
@@ -123,6 +124,9 @@ ln -s "${dir}/signature" "${HOME}/.signature"
 ErrExit
 echo "Installing gitconfig"
 ln -s "${dir}/gitconfig" "${HOME}/.gitconfig"
+ErrExit
+echo "Installing dir_colors"
+ln -s "${dir}/dir_colors" "${HOME}/.dir_colors"
 ErrExit
 
 rm -rf $tmpdir
