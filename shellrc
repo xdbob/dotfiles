@@ -1,6 +1,3 @@
-# Reset the path...
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/jvm/java-8-openjdk/bin"
-
 export GOPATH=$HOME/.go
 export EDITOR='vim'
 export NNTPSERVER=news.epita.fr
@@ -18,6 +15,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias df='df --human-readable'
 alias du='du --human-readable'
+alias gpg='gpg2'
 
 # Ls colors
 if [ -x /usr/bin/dircolors ]; then
