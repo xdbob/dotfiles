@@ -55,7 +55,7 @@ status.register("runwatch",
 #
 # Note: requires both netifaces-py3 and basiciw
 status.register("network",
-    interface="wifi",
+    interface="wlp1s0",
     format_up="{essid} {quality:03.0f}%",)
 
 status.run()
