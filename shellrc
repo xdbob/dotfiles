@@ -2,6 +2,7 @@ export GOPATH=$HOME/.go
 export EDITOR='vim'
 export NNTPSERVER=news.epita.fr
 export HISTFILE=$HOME/.history
+export HISTSIZE=-1
 
 # Alias
 alias xclip='xclip -i -selection clipboard'
@@ -16,6 +17,7 @@ alias lla='ls -la'
 alias df='df --human-readable'
 alias du='du --human-readable'
 alias gpg='gpg2'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # Ls colors
 if [ -x /usr/bin/dircolors ]; then
