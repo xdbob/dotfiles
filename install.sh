@@ -74,6 +74,7 @@ Backup "${HOME}/.signature"
 Backup "${HOME}/.oh-my-zsh"
 Backup "${HOME}/.gitconfig"
 Backup "${HOME}/.dir_colors"
+Backup "${HOME}/.zsh"
 
 # Generating backup archives
 cd $tmpdir
@@ -94,10 +95,12 @@ ErrExit
 echo "Installing zshrc"
 ln -s "${dir}/zshrc" "${HOME}/.zshrc"
 ErrExit
-echo "Installing Oh My Zsh"
-ln -s "${dir}/oh-my-zsh" "${HOME}/.oh-my-zsh"
+echo "Installing .zsh"
+ln -s "${dir}/zsh" "${HOME}/.zsh"
+ErrExit
 echo "Installing vim directory"
 ln -s "${dir}/vim" "${HOME}/.vim"
+ErrExit
 echo "Installing vimrc"
 ln -s "${dir}/vim/vimrc" "${HOME}/.vimrc"
 ErrExit

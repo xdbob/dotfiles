@@ -1,0 +1,2 @@
+* Fix parse_git_dirty
+* Handle dependancies

@@ -10,3 +10,18 @@ Les dependances sont:
 * Pour vim
 	* python2
 	* python2-pip
+
+Les fonctions ajoutes a ZSH sont:
+* zsh_stat (stats sur l'utilisation du shell)
+* clipcopy
+Usage:
+<command> | clipcopy
+clipcopy <file>
+* clippaste
+Usage:
+clippaste | <command>
+clippaste > <file>
+* title
+Usage:
+title short_tab_title [long_window_title]
+	* env var => DISABLE_AUTO_TITLE
