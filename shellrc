@@ -2,7 +2,7 @@ export GOPATH=$HOME/.go
 export EDITOR='vim'
 export NNTPSERVER=news.epita.fr
 export HISTFILE=$HOME/.history
-export HISTSIZE=-1
+export HISTSIZE=$((2 ** 31 - 1))
 
 # Alias
 alias xclip='xclip -i -selection clipboard'
