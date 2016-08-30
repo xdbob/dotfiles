@@ -55,8 +55,7 @@ sh ./ycm-compile.sh
 ErrExit
 cd $dir
 
-mkdir -p "${HOME}/.gnupg"
-mkdir -p "${HOME}/.config/systemd/user"
+mkdir --mode=700 -p "${HOME}/.gnupg"
 mkdir -p "${HOME}/.i3"
 
 # Backing up config files
