@@ -1,3 +1,7 @@
+autoload -U compaudit compinit
+
+compinit -i -d "${HOME}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
+
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
