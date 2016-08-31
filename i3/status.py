@@ -27,6 +27,9 @@ status.register("mem",
 status.register("temp",
         format="{temp:.0f}°C",)
 
+status.register("xkblayout",
+        layouts=["us", "fr"],)
+
 # Affiche la taille de /home
 # Format:
 # 42/128G [86G]
