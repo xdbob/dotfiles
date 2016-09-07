@@ -27,15 +27,9 @@ status.register("mem",
 status.register("temp",
         format="{temp:.0f}°C",)
 
+# Show current keymap and allows to switch by click
 status.register("xkblayout",
         layouts=["us", "fr"],)
-
-# Affiche la taille de /home
-# Format:
-# 42/128G [86G]
-# status.register("disk",
-#    path="/home/",
-#    format="{used}/{total}G [{avail}G]",)
 
 # Affiche le volume
 status.register("pulseaudio",
@@ -47,17 +41,16 @@ status.register("pulseaudio",
 # =14.22W 100.0% [91.21%]
 #
 # This would also display a desktop notification (via dbus) if the percentage
-# goes below 5 percent while discharging. The block will also color RED.
-# status.register("battery",
-#    format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-#    alert=True,
-#    battery_ident="BAT1",
-#    alert_percentage=5,
-#    status={
-#        "DIS": "↓",
-#        "CHR": "↑",
-#        "FULL": "=",
-#    },)
+# goes below 10 percent while discharging. The block will also color RED.
+status.register("battery",
+    format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
+    alert=True,
+    alert_percentage=10,
+    status={
+        "DIS": "↓",
+        "CHR": "↑",
+        "FULL": "=",
+    },)
 
 # Show if DHCPD is running
 status.register("runwatch",
@@ -70,26 +63,18 @@ status.register("runwatch",
 #
 # Note: requires both netifaces-py3 and basiciw
 status.register("network",
-    interface="eno1",
+    interface="ether",
     format_up="{v4cidr}",)
 
-# Shows disk usage of /
+status.register("network",
+    interface="wifi",
+    format_up="{v4cidr}",)
+
+# Shows disk usage of /home
 # Format:
 # 42/128G [86G]
 status.register("disk",
     path="/home",
     format="{used}/{total}G [{avail}G]",)
-
-# Shows mpd status
-# Format:
-# Cloud connected▶Reroute to Remain
-status.register("mpd",
-    format="{title}{status}{album}",
-    status={
-        "pause": "▷",
-        "play": "▶",
-        "stop": "◾",
-    },
-    host="liza")
 
 status.run()
