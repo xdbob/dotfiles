@@ -8,7 +8,7 @@ export HISTSIZE=$((2 ** 31 - 1))
 # Alias
 alias xclip='xclip -i -selection clipboard'
 alias gwall='gcc -Wall -Wextra -Werror -std=c99 -pedantic -g3'
-alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+alias ls='ls --classify --tabsize=0 --literal --color --show-control-chars --human-readable'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
@@ -18,7 +18,8 @@ alias lla='ls -la'
 alias df='df --human-readable'
 alias du='du --human-readable'
 alias gpg='gpg2'
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias less='less -R'
 
 # Ls colors
 if [ -x /usr/bin/dircolors ]; then
