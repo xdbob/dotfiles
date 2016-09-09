@@ -75,14 +75,18 @@ Backup "${HOME}/.gitconfig"
 Backup "${HOME}/.dir_colors"
 Backup "${HOME}/.zsh"
 
-# Generating backup archives
 cd $tmpdir
-echo "Generating backup archive..."
-tar cjvf ${backdir}.tar.bz2 ${backdir}
-ErrExit
-echo "Copying ${backdir}.tar.bz2 to ${HOME}"
-mv ${backdir}.tar.bz2 ${HOME}
-ErrExit
+if [ -n "$(ls -A ${backdir})" ]; then
+	# Generating backup archives
+	echo "Generating backup archive..."
+	tar cjvf ${backdir}.tar.bz2 ${backdir}
+	ErrExit
+	echo "Copying ${backdir}.tar.bz2 to ${HOME}"
+	mv ${backdir}.tar.bz2 ${HOME}
+	ErrExit
+else
+	echo "No file was backed up... Skipping archive creation"
+fi
 cd $dir
 
 # Installing the new files
