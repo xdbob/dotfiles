@@ -74,6 +74,7 @@ Backup "${HOME}/.oh-my-zsh"
 Backup "${HOME}/.gitconfig"
 Backup "${HOME}/.dir_colors"
 Backup "${HOME}/.zsh"
+Backup "${HOME}/.config/nvim"
 
 cd $tmpdir
 if [ -n "$(ls -A ${backdir})" ]; then
@@ -105,7 +106,10 @@ echo "Installing vim directory"
 ln -s "${dir}/vim" "${HOME}/.vim"
 ErrExit
 echo "Installing vimrc"
-ln -s "${dir}/vim/vimrc" "${HOME}/.vimrc"
+ln -s "${dir}/vim/init.vim" "${HOME}/.vimrc"
+ErrExit
+echo "Installing nvimrc"
+ln -s "${dir}/vim" "${HOME}/.config/nvim"
 ErrExit
 echo "Installing gpg.conf"
 ln -s "${dir}/gnupg/gpg.conf" "${HOME}/.gnupg/gpg.conf"
