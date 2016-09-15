@@ -41,6 +41,10 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 
+# Change brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec j4-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
