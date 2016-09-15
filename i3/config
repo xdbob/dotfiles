@@ -30,8 +30,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec urxvt -e zsh
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
+#bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,3 +178,4 @@ exec --no-startup-id pulseaudio
 exec --no-startup-id xset dpms 600
 exec --no-startup-id xss-lock -- ~/.i3/lock.sh
 exec --no-startup-id unclutter
+exec --no-startup-id compton -CGb --vsync drm

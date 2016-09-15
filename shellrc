@@ -20,6 +20,7 @@ alias du='du --human-readable'
 alias gpg='gpg2'
 alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias less='less -R'
+alias ssh='TERM=xterm ssh'
 
 # Ls colors
 if [ -x /usr/bin/dircolors ]; then

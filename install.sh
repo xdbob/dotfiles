@@ -57,6 +57,7 @@ cd $dir
 
 mkdir --mode=700 -p "${HOME}/.gnupg"
 mkdir -p "${HOME}/.i3"
+mkdir -p "${HOME}/.config/termite"
 
 # Backing up config files
 Backup "${HOME}/.zshrc"
@@ -75,6 +76,8 @@ Backup "${HOME}/.gitconfig"
 Backup "${HOME}/.dir_colors"
 Backup "${HOME}/.zsh"
 Backup "${HOME}/.config/nvim"
+Backup "${HOME}/.compton.conf"
+Backup "${HOME}/.config/termite/config"
 
 cd $tmpdir
 if [ -n "$(ls -A ${backdir})" ]; then
@@ -138,6 +141,11 @@ ErrExit
 echo "Installing dir_colors"
 ln -s "${dir}/dir_colors" "${HOME}/.dir_colors"
 ErrExit
+echo "Installing compton conf"
+ln -s "${dir}/compton.conf" "${HOME}/.compton.conf"
+ErrExit
+echo "Installin termiterc"
+ln -s "${dir}/termiterc" "${HOME}/.config/termite/config"
 
 rm -rf $tmpdir
 exit 0
