@@ -69,6 +69,7 @@ Backup "${HOME}/.gnupg/gpg-agent.conf"
 Backup "${HOME}/.i3/config"
 Backup "${HOME}/.i3/lock.sh"
 Backup "${HOME}/.i3/status.py"
+Backup "${HOME}/.i3/i3-sensible-terminal"
 Backup "${HOME}/.Xdefaults"
 Backup "${HOME}/.signature"
 Backup "${HOME}/.oh-my-zsh"
@@ -128,6 +129,9 @@ ln -s "${dir}/i3/status.py" "${HOME}/.i3/status.py"
 ErrExit
 echo "Installing lock.sh"
 ln -s "${dir}/i3/lock.sh" "${HOME}/.i3/lock.sh"
+ErrExit
+echo "Installing i3-sensible-terminal"
+ln -s "${dir}/i3/i3-sensible-terminal" "${HOME}/.i3/i3-sensible-terminal"
 ErrExit
 echo "Installing Xdefaults"
 ln -s "${dir}/Xdefaults" "${HOME}/.Xdefaults"
