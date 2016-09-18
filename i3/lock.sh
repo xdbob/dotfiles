@@ -4,7 +4,11 @@ scrot /tmp/screen.png
 if [ "$1" = "screen" ]; then
 	i3lock -i /tmp/screen.png -f
 else
-	convert /tmp/screen.png -blur 0x5 /tmp/blur.png
-	i3lock -i /tmp/blur.png
+	i3lock -n -i /tmp/screen.png &
+	LOCK=$!
+	convert /tmp/screen.png -filter Gaussian -resize 50% \
+		-define filter:sigma=2.5 -resize 200% /tmp/blur.png
+	kill -9 $LOCK
+	i3lock -i /tmp/blur.png -f
 fi
-exit 0;
+exit 0
