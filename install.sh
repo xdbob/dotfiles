@@ -79,6 +79,7 @@ Backup "${HOME}/.zsh"
 Backup "${HOME}/.config/nvim"
 Backup "${HOME}/.compton.conf"
 Backup "${HOME}/.config/termite/config"
+Backup "${HOME}/.bashrc"
 
 cd $tmpdir
 if [ -n "$(ls -A ${backdir})" ]; then
@@ -150,6 +151,10 @@ ln -s "${dir}/compton.conf" "${HOME}/.compton.conf"
 ErrExit
 echo "Installin termiterc"
 ln -s "${dir}/termiterc" "${HOME}/.config/termite/config"
+ErrExit
+echo "Installing bashrc"
+ln -s "${dir}/bashrc" "${HOME}/.bashrc"
+ErrExit
 
 rm -rf $tmpdir
 exit 0
