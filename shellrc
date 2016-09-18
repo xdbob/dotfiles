@@ -22,6 +22,21 @@ alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias less='less -R'
 alias ssh='TERM=xterm ssh'
 
+function compress() {
+	if [ -z "$1" ]; then
+		echo compress takes a file or a direcory in argument >&2
+		return 1
+	fi
+	if [ -d "$1" ]; then
+		tar cjvf "${1}.tar.bz2" "$1" && rm -rf "$1"
+	elif [ -f "$1" ]; then
+		bzip2 -z "$1"
+	else
+		echo Aucun fichier ou dossier de ce type >&2
+		return 2
+	fi
+}
+
 # Ls colors
 if [ -x /usr/bin/dircolors ]; then
 	if [ -r $HOME/.dir_colors ]; then
