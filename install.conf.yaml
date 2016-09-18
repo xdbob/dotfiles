@@ -1,0 +1,37 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [./vim/h2cppx-postinstall.sh, Installing h2cppx dependancies]
+    - [./vim/ycm-compile.sh, Installing YouCompleteMe]
+    - [mkdir -p --mode=700 ~/.gnupg, Creating gpg dir with right permissions]
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.shellrc: shellrc
+    ~/.zshrc: zshrc
+    ~/.zsh: zsh
+    ~/.vim: vim
+    ~/.vimrc: vim/init.vim
+    ~/.config/nvim: vim
+    ~/.gnupg/gpg.conf: gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.i3/config: i3/config
+    ~/.i3/lock.sh: i3/lock.sh
+    ~/.i3/status.py: i3/status.py
+    ~/.i3/i3-sensible-terminal: i3/i3-sensible-terminal
+    ~/.Xdefaults: Xdefaults
+    ~/.signature: signature
+    ~/.gitconfig: gitconfig
+    ~/.dir_colors: dir_colors
+    ~/.compton.conf: compton.conf
+    ~/.config/termite/config: termiterc
+    ~/.bashrc: bashrc
+
+- shell:
+    - [touch ~/.customrc, Creating curstomrc]
