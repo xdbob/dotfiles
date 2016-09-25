@@ -1,7 +1,7 @@
 Les dependances sont:
 * Pour i3-wm
-	* scrot (lock)
-	* imagemagick (lock)
+	* scrot (lock: screenshot)
+	* imagemagick (lock: blur)
 	* feh (wallpaper)
 	* j4-dmenu-desktop (dynamic menu)
 	* xorg-xset (mise en 'veille')
@@ -9,7 +9,7 @@ Les dependances sont:
 	* unclutter-xfixes-git (Cache la souris en cas d'inactivite)
 	* compton (Compositeur graphique)
 	* termite (emulateur de terminal)
-	* i3lock
+	* i3lock (lock)
 	* ttf-hack (font pour termite)
 	* pulseaudio
 	* i3pystatus (Status bar)
@@ -20,8 +20,10 @@ Les dependances sont:
 * Pour vim
 	* python2
 	* python2-pip
-	* (Option) golang
+	* cmake
+	* (Option) go
 	* (Option) mono
+	* (Option) clang
 
 Les fonctions ajoutes a ZSH sont:
 * zsh_stat (stats sur l'utilisation du shell)
