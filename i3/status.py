@@ -32,7 +32,7 @@ status.register("xkblayout",
         layouts=["us", "fr"],)
 
 # Affiche le volume
-status.register("pulseaudio",
+status.register("alsa",
     format="♪{volume}",)
 
 # This would look like this, when discharging (or charging)
