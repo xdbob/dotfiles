@@ -35,3 +35,7 @@
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]
+    -
+        command: zsh ./dependancies-check.zsh
+        description: Checking dependancies
+        stderr: true
