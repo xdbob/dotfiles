@@ -20,7 +20,7 @@ alias du='du --human-readable'
 alias gpg='gpg2'
 alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias less='less -R'
-alias ssh='TERM=xterm ssh'
+alias ssh='TERM=xterm-256color ssh'
 
 function compress() {
 	if [ -z "$1" ]; then
