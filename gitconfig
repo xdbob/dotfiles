@@ -25,3 +25,6 @@
 
 [sendemail]
 	smtpserver = smtp.lse.epita.fr
+
+[commit]
+	gpgsign = true
