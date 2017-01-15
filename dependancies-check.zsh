@@ -45,6 +45,7 @@ look compton
 look termite
 look i3lock
 look pulseaudio
+look pulseaudio-ctl
 look python2
 look python
 look pip2

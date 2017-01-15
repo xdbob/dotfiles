@@ -36,9 +36,9 @@ bindsym $mod+Return exec ~/.i3/i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Change volume
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 
 # Change brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
