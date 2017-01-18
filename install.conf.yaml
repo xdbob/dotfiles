@@ -39,3 +39,4 @@
         command: zsh ./dependancies-check.zsh
         description: Checking dependancies
         stderr: true
+    - [vim -c GoInstallBinaries -c q, Installing vim-go dependancies]
