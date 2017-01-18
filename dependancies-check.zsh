@@ -50,8 +50,7 @@ look python2
 look python
 look pip2
 look go
-look xbuild
-look mono
+look xbuild mono
 look clang
 python_look i3pystatus
 python_look alsaaudio python-pyalsaaudio
@@ -61,7 +60,7 @@ python_look netifaces python-netifaces
 python_look bs4 python-beautifulsoup4
 python_look cssselect python-cssselect
 python_look lxml python-lxml
-python_look pywapi python-pywap
+python_look pywapi python-pywapi
 python_look basiciw python-basiciw
 python_look colour python-colour
 
