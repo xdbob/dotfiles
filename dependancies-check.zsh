@@ -49,6 +49,10 @@ look pulseaudio-ctl
 look python2
 look python
 look pip2
+look go
+look xbuild
+look mono
+look clang
 python_look i3pystatus
 python_look alsaaudio python-pyalsaaudio
 python_look dbus python-dbus
