@@ -32,6 +32,7 @@
     ~/.compton.conf: compton.conf
     ~/.config/termite/config: termiterc
     ~/.bashrc: bashrc
+    ~/.shell: shell
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]
