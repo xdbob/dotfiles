@@ -28,8 +28,8 @@ status.register("temp",
         format="{temp:.0f}°C",)
 
 # Show current keymap and allows to switch by click
-status.register("xkblayout",
-        layouts=["us", "fr"],)
+#status.register("xkblayout",
+#        layouts=["us", "fr"],)
 
 # Affiche le volume
 status.register("pulseaudio",
