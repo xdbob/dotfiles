@@ -40,7 +40,6 @@ look feh
 look j4-dmenu-desktop
 look xset xorg-xset
 look xss-lock
-look unclutter
 look compton
 look termite
 look i3lock
