@@ -2,9 +2,23 @@
 
 autoload -U colors && colors
 ERR=0
+install=$1
+install_first=0
+
+function do_install() {
+	if [ "$install" = "yes" ]; then
+		if [ $install_first -eq 0 ]; then
+			yaourt -Syy
+			install_first=1
+		fi
+		if yaourt -S --noconfirm "$1"; then
+			ERR=$(($ERR - 1))
+		fi
+	fi
+}
 
 function status() {
-	if [ $? -eq 0 ]; then
+	if [ $2 -eq 0 ]; then
 		print "Is $1 present ? $fg[green]yes${reset_color}"
 	else
 		print "$fg_bold[red]$1 was NOT FOUND$reset_color" >&2
@@ -23,17 +37,24 @@ function print_name() {
 function python_look() {
 	local name=`print_name $1 $2`
 	python -c "import $1" &> /dev/null
-	status $name
+	local present=$?
+	status $name $present
+	if [ $present -ne 0 ]; then
+		do_install "python-$1"
+	fi
 }
 
 function look() {
 	local name=`print_name $1 $2`
 	which "$1" &> /dev/null
-	status $name
+	local present=$?
+	status $name $present
+	if [ $present -ne 0 ]; then
+		do_install "$1"
+	fi
 }
 
 # TODO: detect ttf-hack
-
 look scrot
 look convert imagemagick
 look feh
@@ -51,6 +72,7 @@ look pip2
 look go
 look xbuild mono
 look clang
+look ccache
 python_look i3pystatus
 python_look alsaaudio python-pyalsaaudio
 python_look dbus python-dbus
