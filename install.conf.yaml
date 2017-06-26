@@ -33,6 +33,7 @@
     ~/.config/termite/config: termiterc
     ~/.bashrc: bashrc
     ~/.shell: shell
+    ~/.config/pulse/default.pa: pulse/default.pa
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]
@@ -41,3 +42,7 @@
         description: Checking dependancies
         stderr: true
     - [vim -c GoInstallBinaries -c q, Installing vim-go dependancies]
+    -
+        command: gpg -o ~/.config/pulse/cookie --decrypt ./pulse/pulse-cookie.asc
+        description: Installing pulse cookie
+        stderr: true

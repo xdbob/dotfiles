@@ -178,7 +178,6 @@ bar {
 #exec --no-startyp-id feh --bg-center ~/.i3/wallpapers/wallpaper.png --bg-fill ~/.i3/wallpapers/arch-left.jpg
 #exec --no-startup-id feh --image-bg black --bg-center  ~/.i3/wallpapers/wallpaper.png
 exec ~/.fehbg
-exec --no-startup-id pulseaudio
 exec --no-startup-id xset dpms 600
 exec --no-startup-id xss-lock -l -- ~/.i3/lock.sh
 exec --no-startup-id compton -b
