@@ -60,7 +60,7 @@ look convert imagemagick
 look feh
 look j4-dmenu-desktop
 look xset xorg-xset
-look xss-lock
+look xss-lock xss-lock-git
 look compton
 look termite
 look i3lock
