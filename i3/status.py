@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
+import os
 
 from i3pystatus import Status
+
+def get_temp_from_name(name):
+    root = '/sys/class/hwmon'
+    for d in os.listdir(root):
+        with open(os.path.join(root, d + '/name')) as n:
+            if name == n.read()[:-1]:
+                    return os.path.join(root, d + '/temp1_input')
+    return '/sys/class/hwmon/hwmon0/temp1_input'
 
 status = Status(standalone=True)
 
@@ -25,7 +34,8 @@ status.register("mem",
 
 # Show your CPU temperature, if you have a Intel CPU
 status.register("temp",
-        format="{temp:.0f}°C",)
+        format="{temp:.0f}°C",
+        file=get_temp_from_name('coretemp'))
 
 # Show current keymap and allows to switch by click
 #status.register("xkblayout",
