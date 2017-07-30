@@ -14,7 +14,7 @@ function reshadow() {
 	fi
 }
 
-if [ !"$SSH_CONNECTION" ] && [ "$SSH_TTY" != $(tty) ]; then
+if [ !"$SSH_CONNECTION" ] && [ "$SSH_TTY" != "$(tty)" ]; then
 	# Set GPG TTY
 	export GPG_TTY=$(tty)
 
