@@ -46,11 +46,11 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec j4-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="(cat && (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/.bin/dmenu_run_history"
 
 # lockscreen
 bindsym $md+l exec --no-startup-id ~/.i3/lock.sh
