@@ -1,5 +1,5 @@
 export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$HOME/.bin
 export EDITOR='vim'
 export NNTPSERVER=news.epita.fr
 export HISTFILE=$HOME/.history
