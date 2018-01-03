@@ -1,0 +1,36 @@
+# Basic
+set mbox_type=maildir
+set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+set sort='reverse-threads'
+set sort_aux='last-date-received'
+
+# Mailboxes
+set nm_default_uri = "notmuch://$HOME/.mail/"
+virtual-mailboxes "inbox"	"notmuch://?query=tag:Inbox"
+virtual-mailboxes "sent"	"notmuch://?query=tag:Sent"
+virtual-mailboxes "all"		"notmuch://?query=tag:All"
+virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
+
+set realname = "Antoine Damhet"
+set signature = $HOME/.signature
+
+# HTML handling
+auto_view text/html
+alternative_order text/plain text/html
+set mailcap_path = .mutt/mailcap
+
+# Sidebar config
+set sidebar_width=20
+set sidebar_visible=yes
+set sidebar_short_path=yes
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+
+set edit_headers=yes
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+
+source .mutt/notmuch
+source .mutt/bindings
+source .mutt/colors
+
+# vim:ft=neomuttrc

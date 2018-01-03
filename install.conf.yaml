@@ -36,6 +36,8 @@
     ~/.config/pulse/default.pa: pulse/default.pa
     ~/.bin: bin
     ~/.pip/pip.conf: pip.conf
+    ~/.mutt: mutt
+    ~/.muttrc: muttrc
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]

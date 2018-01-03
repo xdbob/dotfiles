@@ -1,0 +1,23 @@
+# Sidebar bindings
+bind index '[' sidebar-prev
+bind index ']' sidebar-next
+bind index '#' sidebar-open
+
+# Remap bounce-message function to “B” and toggle sb with b
+bind index B bounce-message
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+# A macro to store attachments in specific folder
+macro attach , "<save-entry><bol>$HOME/Downloads/attachments/<eol>" "Save to downloads folder"
+
+macro index A \
+        "<modify-labels-then-hide>+All -Inbox -unread<enter>" \
+        "tag as archived"
+macro index S \
+        "<modify-labels-then-hide>+Junk -Inbox -unread<enter>" 
+macro index R \
+        "<pipe-message>maildir-notmuch-sync pre ~/.mail/gmail && mbsync -a; notmuch new && maildir-notmuch-sync post ~/.mail/gmail<enter>" \
+        "sync all mailboxes"
+
+# vim:ft=neomuttrc
