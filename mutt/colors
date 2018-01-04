@@ -15,7 +15,7 @@ color markers brightcyan black
 
 # index
 color index brightcyan black ~N
-color index brightred black ~O
+color index brightblue black ~O
 color index brightyellow black ~F
 color index black green ~T
 color index brightred black ~D
