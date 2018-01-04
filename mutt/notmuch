@@ -20,7 +20,7 @@ set nm_query_type = messages
 
 # Tags that should be removed or added to the to the messages stored in the NeoMutt record.
 set nm_record = yes
-set nm_record_tags = "+Sent -unread -Inbox"
+set nm_record_tags = "+All +Sent -unread -Inbox"
 # This variable specifies notmuch tag which is used for unread messages.
 set nm_unread_tag = unread
 # This variable allows you to customize the file browser display for virtual

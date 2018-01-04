@@ -13,6 +13,9 @@ virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
 
 set realname = "Antoine Damhet"
 set signature = $HOME/.signature
+set from = "xdbob@lse.epita.fr"
+set record = +Sent
+set sendmail="msmtp --read-envelope-from"
 
 # HTML handling
 auto_view text/html
