@@ -19,6 +19,7 @@ macro index S \
 macro index R \
         "<pipe-message>maildir-notmuch-sync pre ~/.mail/gmail && mbsync -a; notmuch new && maildir-notmuch-sync post ~/.mail/gmail<enter>" \
         "sync all mailboxes"
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
 
 bind index,pager a group-reply
 bind pager j next-line
