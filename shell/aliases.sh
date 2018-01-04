@@ -16,3 +16,14 @@ alias less='less -R'
 alias ssh='TERM=xterm-256color ssh'
 alias klog='dmesg --color=always | less -R'
 alias mutt='neomutt'
+
+function mailsync() {
+	if [ $# -eq 0 ]; then
+		mailsync -a
+	else
+		maildir-notmuch-sync pre ~/.mail/gmail && \
+			mbsync $@; \
+			notmuch new && \
+			maildir-notmuch-sync post ~/.mail/gmail
+	fi
+}
