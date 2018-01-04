@@ -38,6 +38,7 @@
     ~/.pip/pip.conf: pip.conf
     ~/.mutt: mutt
     ~/.muttrc: muttrc
+    ~/.msmtprc: msmtprc
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]
