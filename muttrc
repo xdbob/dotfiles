@@ -20,7 +20,7 @@ set sendmail="msmtp --read-envelope-from"
 # HTML handling
 auto_view text/html
 alternative_order text/plain text/html
-set mailcap_path = .mutt/mailcap
+set mailcap_path = $HOME/.mutt/mailcap
 
 # Sidebar config
 set sidebar_width=20
@@ -29,11 +29,11 @@ set sidebar_short_path=yes
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 
 set edit_headers=yes
-set header_cache = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
+set header_cache = $HOME/.mutt/cache/headers
+set message_cachedir = $HOME/.mutt/cache/bodies
 
-source .mutt/notmuch
-source .mutt/bindings
-source .mutt/colors
+source $HOME/.mutt/notmuch
+source $HOME/.mutt/bindings
+source $HOME/.mutt/colors
 
 # vim:ft=neomuttrc
