@@ -53,3 +53,5 @@
         command: gpg -o ~/.config/pulse/cookie --decrypt ./pulse/pulse-cookie.asc
         description: Installing pulse cookie
         stderr: true
+    - [mkdir -p ~/.mail/gmail && mbsync --pull gmail-inbox, Fetch Inbox]
+    - [notmuch new && maildir-notmuch-sync post ~/.mail/gmail, Initial notmuch setup]
