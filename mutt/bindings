@@ -30,4 +30,46 @@ bind pager G bottom
 bind attach,index g first-entry
 bind attach,index G last-entry
 
+# --------------------------------------------------------------------------
+# Usenet FUNCTIONS - shown with an example mapping
+# --------------------------------------------------------------------------
+# mark all articles in newsgroup as read
+bind browser,index y catchup
+# open a different newsgroup
+bind index,pager i change-newsgroup
+# edit the Followup-To field
+bind compose o edit-followup-to
+# edit the newsgroups list
+bind compose N edit-newsgroups
+# edit the X-Comment-To field
+bind compose x edit-x-comment-to
+# followup to newsgroup
+bind attach,index,pager F followup-message
+# post message to newsgroup
+bind index,pager P post-message
+# load list of all newsgroups from NNTP server
+bind browser g reload-active
+# subscribe to current mbox (IMAP/NNTP only)
+bind browser s subscribe
+# subscribe to newsgroups matching a pattern
+bind browser S subscribe-pattern
+# mark all articles in newsgroup as unread
+bind browser Y uncatchup
+# unsubscribe from current mbox (IMAP/NNTP only)
+bind browser u unsubscribe
+# unsubscribe from newsgroups matching a pattern
+bind browser U unsubscribe-pattern
+# open a different newsgroup in read only mode
+bind index,pager \ei change-newsgroup-readonly
+# forward to newsgroup
+bind attach,index,pager \eF forward-to-group
+# get all children of the current message
+# bind index ??? get-children
+# get parent of the current message
+bind index \eG get-parent
+# reconstruct thread containing current message
+# bind index ??? reconstruct-thread
+# get message with Message-Id
+bind index \CG get-message
+
 # vim:ft=neomuttrc
