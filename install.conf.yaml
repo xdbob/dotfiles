@@ -39,6 +39,7 @@
     ~/.mutt: mutt
     ~/.muttrc: muttrc
     ~/.msmtprc: msmtprc
+    ~/.mbsyncrc: mbsyncrc
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]

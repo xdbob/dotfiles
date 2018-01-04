@@ -1,0 +1,52 @@
+IMAPAccount gmail
+# Address to connect to
+Host imap.gmail.com
+User antoine.damhet@gmail.com
+# To store the password in an encrypted file use PassCmd instead of Pass
+PassCmd "pass show mails/gmail"
+#
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# The trailing "/" is important
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/inbox
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:Inbox
+#Patterns "INBOX"
+
+Channel gmail-archive
+Master :gmail-remote:"[Gmail]/Tous les messages"
+Slave :gmail-local:All
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent"
+Slave :gmail-local:Sent
+
+Channel gmail-junk
+Master :gmail-remote:"[Gmail]/Spam"
+Slave :gmail-local:Junk
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-received
+Channel gmail-sent
+Channel gmail-junk
+Channel gmail-archive
+
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
