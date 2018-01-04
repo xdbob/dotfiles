@@ -1,0 +1,12 @@
+message-hook '!~g !~G ~b "^-----BEGIN PGP (SIGNED )?MESSAGE"' 'exec check-traditional-pgp'
+set crypt_autosign = yes
+set crypt_opportunistic_encrypt = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
+set crypt_use_gpgme = yes
+set crypt_verify_sig = yes
+set pgp_auto_decode = yes
+set pgp_encrypt_self = yes
+set pgp_good_sign="^gpg: Good signature from"
+
+# vim:ft=neomuttrc

@@ -32,8 +32,12 @@ set edit_headers=yes
 set header_cache = $HOME/.mutt/cache/headers
 set message_cachedir = $HOME/.mutt/cache/bodies
 
+# GPG Config
+set pgp_sign_as = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
+
 source $HOME/.mutt/notmuch
 source $HOME/.mutt/bindings
 source $HOME/.mutt/colors
+source $HOME/.mutt/gpg
 
 # vim:ft=neomuttrc
