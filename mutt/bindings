@@ -12,10 +12,10 @@ macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro attach , "<save-entry><bol>$HOME/Downloads/attachments/<eol>" "Save to downloads folder"
 
 macro index A \
-        "<modify-labels-then-hide>+All -Inbox -unread<enter>" \
+        "<modify-labels-then-hide>+All -inbox -unread<enter><sync-mailbox>" \
         "tag as archived"
 macro index S \
-        "<modify-labels-then-hide>+Junk -Inbox -unread<enter>" 
+        "<modify-labels-then-hide>+Junk -inbox -unread<enter><sync-mailbox>"
 macro index R \
         "<pipe-message>maildir-notmuch-sync pre ~/.mail/gmail && mbsync -a; notmuch new && maildir-notmuch-sync post ~/.mail/gmail<enter>" \
         "sync all mailboxes"

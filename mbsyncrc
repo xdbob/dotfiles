@@ -22,7 +22,7 @@ Inbox ~/.mail/gmail/inbox
 
 Channel gmail-inbox
 Master :gmail-remote:
-Slave :gmail-local:Inbox
+Slave :gmail-local:inbox
 #Patterns "INBOX"
 
 Channel gmail-archive

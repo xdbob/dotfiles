@@ -6,7 +6,7 @@ set sort_aux='last-date-received'
 
 # Mailboxes
 set nm_default_uri = "notmuch://$HOME/.mail/"
-virtual-mailboxes "inbox"	"notmuch://?query=tag:Inbox"
+virtual-mailboxes "inbox"	"notmuch://?query=tag:inbox"
 virtual-mailboxes "sent"	"notmuch://?query=tag:Sent"
 virtual-mailboxes "all"		"notmuch://?query=tag:All"
 virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
