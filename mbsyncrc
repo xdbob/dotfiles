@@ -49,7 +49,6 @@ Channel gmail-inbox
 Channel gmail-received
 Channel gmail-sent
 Channel gmail-junk
-Channel gmail-archive
 
 # Or include everything
 #Patterns *
