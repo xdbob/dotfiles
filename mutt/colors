@@ -28,7 +28,8 @@ color index_size cyan default
 
 # sidebar
 color sidebar_divider blue black
-color sidebar_new yellow default
+color sidebar_new yellow black
+color sidebar_highlight default black
 
 # urls
 color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
