@@ -20,6 +20,8 @@ macro index R \
         "<pipe-message>maildir-notmuch-sync pre ~/.mail/gmail && mbsync -a; notmuch new && maildir-notmuch-sync post ~/.mail/gmail<enter>" \
         "sync all mailboxes"
 macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+macro index,pager + "<modify-labels>+" "+Add or -Remove notmuch tags"
+macro index,pager - "<modify-labels-then-hide>-" "+Add or -Remove notmuch tags then hide the message"
 
 bind index,pager a group-reply
 bind pager j next-line
