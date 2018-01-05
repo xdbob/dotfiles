@@ -9,6 +9,8 @@ set folder='~/.mail/gmail/'
 set nm_default_uri = "notmuch://$HOME/.mail/"
 virtual-mailboxes "inbox"	"notmuch://?query=tag:inbox"
 virtual-mailboxes "sent"	"notmuch://?query=tag:Sent"
+virtual-mailboxes "lse-current"	"notmuch://?query=tag:MLs/LSE"
+virtual-mailboxes "strace"	"notmuch://?query=tag:MLs/Strace"
 virtual-mailboxes "all"		"notmuch://?query=tag:All"
 virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
 
