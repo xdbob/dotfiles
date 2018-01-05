@@ -19,6 +19,7 @@ MaildirStore gmail-local
 # The trailing "/" is important
 Path ~/.mail/gmail/
 Inbox ~/.mail/gmail/inbox
+SubFolders Verbatim
 
 Channel gmail-inbox
 Master :gmail-remote:
@@ -36,6 +37,12 @@ Slave :gmail-local:Sent
 Channel gmail-junk
 Master :gmail-remote:"[Gmail]/Spam"
 Slave :gmail-local:Junk
+
+# All the rest
+Channel gmail-all
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns * ![Gmail]* !Inbox !All !Sent !Junk
 
 Group gmail
 Channel gmail-inbox
