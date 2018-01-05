@@ -95,7 +95,7 @@ MAKE_NEW_UNREAD=false
 
 # convert infix slashes to dashes in tags,
 # e.g. "clients/bob" becomes "clients-bob"
-SLASHES_TO_DASHES=false
+SLASHES_TO_DASHES=true
 
 # shorter, trimmed tags; see description below
 TRIM_ACCOUNT_PREFIX_IN_TAGS=true
