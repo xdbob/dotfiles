@@ -8,5 +8,6 @@ set crypt_verify_sig = yes
 set pgp_auto_decode = yes
 set pgp_encrypt_self = yes
 set pgp_good_sign="^gpg: Good signature from"
+set pgp_self_encrypt = yes
 
 # vim:ft=neomuttrc
