@@ -70,4 +70,33 @@ color quoted5 yellow black
 color quoted6 red black
 color quoted7 green black
 
+# Patch syntax highlighting (from jessfraz)
+#color   normal  white           black
+color   body    brightwhite     black         ^[[:space:]].*
+color   body    yellow          black         ^(diff).*
+#color   body    white           black         ^[\-\-\-].*
+#color   body    white           black         ^[\+\+\+].*
+#color   body    green           black         ^[\+].*
+#color   body    red             black         ^[\-].*
+#color   body    brightblue      black         [@@].*
+color   body    brightwhite     black         ^(\s).*
+color   body    cyan            black         ^(Signed-off-by).*
+color   body    cyan            black         ^(Docker-DCO-1.1-Signed-off-by).*
+color   body    brightwhite     black         ^(Cc)
+color   body    yellow          black         "^diff \-.*"
+color   body    brightwhite     black         "^index [a-f0-9].*"
+color   body    brightblue      black         "^---$"
+color   body    white           black         "^\-\-\- .*"
+color   body    white           black         "^[\+]{3} .*"
+color   body    green           black         "^[\+][^\+]+.*"
+color   body    red             black         "^\-[^\-]+.*"
+color   body    brightblue      black         "^@@ .*"
+color   body    green           black         "LGTM"
+color   body    brightmagenta   black         "-- Commit Summary --"
+color   body    brightmagenta   black         "-- File Changes --"
+color   body    brightmagenta   black         "-- Patch Links --"
+color   body    green           black         "^Merged #.*"
+color   body    red             black         "^Closed #.*"
+color   body    brightblue      black         "^Reply to this email.*"
+
 # vim:ft=neomuttrc
