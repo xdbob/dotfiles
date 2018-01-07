@@ -1,6 +1,14 @@
 autoload -U compaudit compinit
 
-compinit -i -d "${HOME}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
+comp_file="${HOME}/.cache/zcompdump"
+version_file="$HOME/.cache/zsh_version"
+if [ ! -f "$version_file" ] || [ "${ZSH_VERSION}" != "$(cat $version_file)" ]; then
+	rm -f -- "$comp_file"
+	echo -n "${ZSH_VERSION}" > "$version_file"
+fi
+compinit -i -d "$comp_file"
+unset version_file
+unset comp_file
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
