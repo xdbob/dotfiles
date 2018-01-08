@@ -1,0 +1,16 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
+- clean: ['~']
+
+- link:
+    ~/.i3/config: i3/config
+    ~/.i3/lock.sh: i3/lock.sh
+    ~/.i3/status.py: i3/status.py
+    ~/.i3/i3-sensible-terminal: i3/i3-sensible-terminal
+    ~/.Xdefaults: Xdefaults
+    ~/.compton.conf: compton.conf
+    ~/.config/termite/config: termiterc
+    ~/.config/pulse/default.pa: pulse/default.pa

@@ -2,13 +2,40 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
+CFG_DIR="dotbot-confs"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
+run() {
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c \
+		"$CFG_DIR/$1.conf.yaml"
+}
+
+IFS=$'\n'
+get_cfg_lst() {
+	for file in $(find "$CFG_DIR" -iname '*.conf.yaml') ; do
+		file=${file#$CFG_DIR/}
+		echo ${file%.conf.yaml}
+	done
+}
+
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+if [ "$#" -eq 0 ]; then
+	for cfg in $(get_cfg_lst); do
+		run "$cfg"
+	done
+	exit 0
+fi
+
+if [ "$1" = "-l" ]; then
+	get_cfg_lst
+	exit 0
+fi
+
+for i in $@; do
+	run "$i"
+done

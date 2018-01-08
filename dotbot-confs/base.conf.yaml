@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- shell:
+  - [mkdir -p --mode=700 ~/.gnupg, Creating gpg dir with right permissions]
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.shell: shell
+    ~/.shellrc: shellrc
+    ~/.zsh: zsh
+    ~/.zshrc: zshrc
+    ~/.gnupg/gpg.conf: gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.signature: signature
+    ~/.bin: bin
+    ~/.pip/pip.conf: pip.conf
+    ~/.bashrc: bashrc
+    ~/.gitconfig: gitconfig
+    ~/.dir_colors: dir_colors
+    ~/.signature: signature
+
+- shell:
+  - [touch ~/.customrc, Creating curstomrc]

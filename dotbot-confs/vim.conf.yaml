@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- shell:
+  - [git submodule update --init --recursive vim, Installing vim submodules]
+  - [./vim/h2cppx-postinstall.sh, Installing h2cppx dependancies]
+  - [./vim/ycm-compile.sh, Installing YouCompleteMe]
+
+- clean: ['~']
+
+- link:
+    ~/.vim: vim
+    ~/.vimrc: vim/init.vim
+    ~/.config/nvim: vim
+
+- shell:
+  - [vim -c GoInstallBinaries -c q, Installing vim-go dependancies]

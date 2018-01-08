@@ -1,0 +1,17 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
+- clean: ['~']
+
+- link:
+    ~/.mutt: mutt
+    ~/.muttrc: muttrc
+    ~/.msmtprc: msmtprc
+    ~/.mbsyncrc: mbsyncrc
+    ~/.notmuch-config: notmuch-config
+    ~/.Xresources: Xresources
+
+- shell:
+    - [mkdir ~/.mail && notmuch new, Initial notmuch setup]
