@@ -18,7 +18,7 @@ virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
 
 set realname = "Antoine Damhet"
 set signature = $HOME/.signature
-set from = "xdbob@lse.epita.fr"
+set from = "Antoine Damhet <xdbob@lse.epita.fr>"
 set record = +Sent
 set reverse_name
 set reverse_realname
