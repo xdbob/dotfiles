@@ -9,6 +9,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# (No) Title Bars
+for_window [class="^.*"] border pixel 0
+
+# Gaps
+gaps inner 10
+gaps outer 0
+smart_gaps on
+
 set $mod Mod4
 set $md Mod1
 
@@ -182,3 +190,19 @@ exec --no-startup-id xset dpms 600
 exec --no-startup-id xss-lock -l -- ~/.i3/lock.sh
 exec --no-startup-id compton -b
 exec --no-startup-id setxkbmap -option -option compose:ralt -option caps:swapescape
+
+set $bg-colour #2f343f
+set $inactive-bg-colour     #2f343f
+set $text-colour            #f3f4f5
+set $inactive-text-colour   #676e7d
+set $urgent-bg-colour       #e53935
+
+client.focused              $bg-colour              $bg-colour                  $text-colour            #00ff00
+client.focused_inactive     $inactive-bg-colour     $inactive-bg-colour         $inactive-text-colour   #00ff00
+client.unfocused            $inactive-bg-colour     $inactive-bg-colour         $inactive-text-colour   #00ff00
+client.urgent               $urgent-bg-colour       $urgent-bg-colour           $text-colour            #00ff00
+
+for_window [class="(?i)pavucontrol"] floating enable
+for_window [class="(?i)pavucontrol"] resize set 1500 1200
+for_window [class="(?i)pinentry"] floating enable
+for_window [class="(?i)Pulseeffects"] floating enable
