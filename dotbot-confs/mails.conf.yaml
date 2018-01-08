@@ -14,4 +14,4 @@
     ~/.Xresources: Xresources
 
 - shell:
-    - [mkdir ~/.mail && notmuch new, Initial notmuch setup]
+    - [mkdir -p ~/.mail && notmuch new, Initial notmuch setup]
