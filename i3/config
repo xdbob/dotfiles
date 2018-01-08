@@ -58,7 +58,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="(cat && (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/.bin/dmenu_run_history"
+bindsym $md+d exec --no-startup-id j4-dmenu-desktop --dmenu="~/.bin/dmenu_run_history"
+
+bindsym $md+Tab exec --no-startup-id rofi -show window -display-window "🗇"
+bindsym $mod+d exec --no-startup-id DMENU="rofi -dmenu" ~/.bin/dmenu_run_history
 
 # lockscreen
 bindsym $md+l exec --no-startup-id ~/.i3/lock.sh
