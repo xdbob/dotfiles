@@ -22,7 +22,7 @@ Inbox ~/.mail/gmail/inbox
 SubFolders Verbatim
 
 Channel gmail-inbox
-Master :gmail-remote:
+Master :gmail-remote:Inbox
 Slave :gmail-local:inbox
 #Patterns "INBOX"
 
