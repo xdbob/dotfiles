@@ -41,6 +41,7 @@
     ~/.msmtprc: msmtprc
     ~/.mbsyncrc: mbsyncrc
     ~/.notmuch-config: notmuch-config
+    ~/.Xresources: Xresources
 
 - shell:
     - [touch ~/.customrc, Creating curstomrc]
