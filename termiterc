@@ -3,4 +3,4 @@ font = Hack 10
 
 [colors]
 foreground = #ffffff
-background = rgba(30, 30, 130, 0.6)
+background = rgba(26, 25, 28, 0.9)
