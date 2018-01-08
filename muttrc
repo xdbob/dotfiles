@@ -20,6 +20,13 @@ set realname = "Antoine Damhet"
 set signature = $HOME/.signature
 set from = "xdbob@lse.epita.fr"
 set record = +Sent
+set reverse_name
+set reverse_realname
+alternates ^antoine.damhet@lse.epita.fr$ ^damhet_a@lse.epita.fr$ \
+           ^antoine.damhet@gmail.com$ \
+           ^xdbob@acu.epita.fr$ ^antoine.damhet@acu.epita.fr$ ^damhet_a@acu.epita.fr$ \
+           ^damhet_a@epita.fr$ ^antoine.damhet@epita.fr$ \
+           ^xdbob@live.fr$
 set sendmail="msmtp --read-envelope-from"
 
 # HTML handling
