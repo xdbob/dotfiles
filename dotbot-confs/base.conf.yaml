@@ -9,7 +9,6 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.shell: shell
     ~/.shellrc: shellrc
     ~/.zsh: zsh
