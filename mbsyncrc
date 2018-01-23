@@ -17,8 +17,8 @@ Account gmail
 
 MaildirStore gmail-local
 # The trailing "/" is important
-Path ~/.mail/gmail/
-Inbox ~/.mail/gmail/inbox
+Path ~/.mail/
+Inbox ~/.mail/inbox
 SubFolders Verbatim
 
 Channel gmail-inbox

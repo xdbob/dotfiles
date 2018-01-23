@@ -3,7 +3,7 @@ set mbox_type=maildir
 set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
 set sort='reverse-threads'
 set sort_aux='last-date-received'
-set folder='~/.mail/gmail/'
+set folder='~/.mail/'
 
 # Mailboxes
 set nm_default_uri = "notmuch://$HOME/.mail/"
