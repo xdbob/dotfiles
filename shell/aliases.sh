@@ -19,11 +19,11 @@ alias mutt='neomutt'
 
 function mailsync() {
 	if [ $# -eq 0 ]; then
-		mailsync -a
+		mblabelsync all
 	else
-		maildir-notmuch-sync pre ~/.mail/gmail && \
+		mblabelsync pre \
 			mbsync $@; \
 			notmuch new && \
-			maildir-notmuch-sync post ~/.mail/gmail
+			mblabelsync post
 	fi
 }
