@@ -52,6 +52,8 @@ bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 # Change brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym $mod+XF86MonBrightnessUp exec brightnessctl s 100%
+bindsym $mod+XF86MonBrightnessDown exec brightnessctl s 10%
 
 # start dmenu (a program launcher)
 # There also is the (new) i3-dmenu-desktop which only displays applications
