@@ -16,4 +16,4 @@
     ~/.config/nvim: vim
 
 - shell:
-  - [vim -c GoInstallBinaries -c q, Installing vim-go dependancies]
+  - [GOPATH=$HOME/.go vim -c GoInstallBinaries -c q, Installing vim-go dependancies]
