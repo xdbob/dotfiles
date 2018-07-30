@@ -22,6 +22,7 @@
     ~/.gitconfig: gitconfig
     ~/.dir_colors: dir_colors
     ~/.signature: signature
+    ~/.screenrc: screenrc
 
 - shell:
   - [touch ~/.customrc, Creating curstomrc]
