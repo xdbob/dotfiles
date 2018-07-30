@@ -10,7 +10,11 @@
     ~/.i3/lock.sh: i3/lock.sh
     ~/.i3/status.py: i3/status.py
     ~/.i3/i3-sensible-terminal: i3/i3-sensible-terminal
+    ~/.i3/i3-service.sh: i3/i3-service.sh
     ~/.Xdefaults: Xdefaults
     ~/.compton.conf: compton.conf
     ~/.config/termite/config: termiterc
     ~/.config/pulse/default.pa: pulse/default.pa
+    ~/.config/systemd/user/i3.service: systemd/i3.service
+    ~/.config/systemd/user/compton.service: systemd/compton.service
+    ~/.config/systemd/user/xss-lock.service: systemd/xss-lock.service

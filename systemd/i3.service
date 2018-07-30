@@ -1,0 +1,7 @@
+[Unit]
+Description=i3 wm watcher
+BindsTo=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/inotifywait -e delete_self ${I3SOCK}

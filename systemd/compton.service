@@ -1,0 +1,10 @@
+[Unit]
+Description=X11 compositor
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/compton
+
+[Install]
+WantedBy=graphical-session.target
