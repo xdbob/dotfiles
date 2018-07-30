@@ -66,7 +66,8 @@ bindsym $md+Tab exec --no-startup-id rofi -show window -display-window "🗇"
 bindsym $mod+d exec --no-startup-id DMENU="rofi -dmenu" ~/.bin/dmenu_run_history
 
 # lockscreen
-bindsym $md+l exec --no-startup-id ~/.i3/lock.sh
+bindsym $md+l exec --no-startup-id loginctl lock-session
+# TODO: find something with loginctl
 bindsym $md+k exec --no-startup-id ~/.i3/lock.sh screen
 
 # change focus
