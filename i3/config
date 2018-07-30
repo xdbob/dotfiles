@@ -214,3 +214,4 @@ for_window [class="(?i)pavucontrol"] floating enable
 for_window [class="(?i)pavucontrol"] resize set 1500 1200
 for_window [class="(?i)pinentry"] floating enable
 for_window [class="(?i)Pulseeffects"] floating enable
+for_window [class="(?i)Qemu-system-*"] floating enable
