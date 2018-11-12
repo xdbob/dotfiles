@@ -62,12 +62,6 @@ status.register("battery",
         "FULL": "=",
     },)
 
-# Show if DHCPD is running
-status.register("runwatch",
-    name="DHCP",
-    path="/var/run/dhcpcd*.pid",)
-
-
 # Has all the options of the normal network and adds some wireless specific things
 # like quality and network names.
 #
