@@ -8,13 +8,23 @@
 # Options to pass to i3lock
 i3lock_options="-i /tmp/lock.png -f"
 
+# $1 input, $2 output file
+blur() {
+    ffmpeg  -i $1 -y -vframes 1 \
+            -filter_complex "boxblur=10:2" \
+            $2 2>/dev/null
+#    convert $1 -filter Gaussian -resize 50% \
+#            -define filter:sigma=2.5 -resize 200% $2
+}
+
 # Run before starting the locker
 pre_lock() {
     if [ "$1" = "screen" ]; then
         scrot /tmp/lock.png
     else
-        convert x:root -filter Gaussian -resize 50% \
-            -define filter:sigma=2.5 -resize 200% /tmp/lock.png
+        scrot /tmp/pic.png
+        blur /tmp/pic.png /tmp/lock.png
+        rm -f /tmp/pic.png
     fi
     return
 }
