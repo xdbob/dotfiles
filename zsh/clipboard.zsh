@@ -30,6 +30,17 @@ function clipcopy() {
 		else
 			cat $file > /dev/clipboard
 		fi
+	elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+		if which wl-copy &>/dev/null; then
+			if [[ -z $file ]]; then
+				wl-copy
+			else
+				wl-copy < $file
+			fi
+		else
+			print "clipcopy: wl-clipboard not installed" >&2
+			return 1
+		fi
 	else
 		if which xclip &>/dev/null; then
 			if [[ -z $file ]]; then
@@ -73,6 +84,13 @@ function clippaste() {
 		pbpaste
 	elif [[ $OSTYPE == cygwin* ]]; then
 		cat /dev/clipboard
+	elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+		if which wl-paste &>/dev/null; then
+			wl-paste
+		else
+			print "clipcopy: wl-clipboard not installed" >&2
+			return 1
+		fi
 	else
 		if which xclip &>/dev/null; then
 			xclip -out -selection clipboard
