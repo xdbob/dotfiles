@@ -3,7 +3,7 @@ source $HOME/.shellrc
 
 DEFAULT_USER=xdbob
 
-for conf in $HOME/.zsh/**/**.zsh; do
+for conf in $HOME/.zsh/*.zsh; do
 	source $conf
 done
 
