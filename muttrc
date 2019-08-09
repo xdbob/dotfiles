@@ -14,6 +14,7 @@ virtual-mailboxes "lse-current"	"notmuch://?query=tag:MLs/LSE"
 virtual-mailboxes "strace"	"notmuch://?query=tag:MLs/Strace"
 virtual-mailboxes "KVM"		"notmuch://?query=tag:MLs/kvm"
 virtual-mailboxes "Virtu"	"notmuch://?query=tag:MLs/Virtu"
+virtual-mailboxes "QEMU"	"notmuch://?query=tag:MLs/qemu"
 virtual-mailboxes "all (2W)"	"notmuch://?query=tag:All and date:14d..now
 virtual-mailboxes "all"		"notmuch://?query=tag:All"
 virtual-mailboxes "junk"	"notmuch://?query=tag:Junk"
