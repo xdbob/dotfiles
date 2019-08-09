@@ -71,7 +71,7 @@ status.register("network",
     format_up="{v4cidr}",)
 
 status.register("network",
-    interface="wifi",
+    interface="wlan0",
     format_up="{v4cidr} {essid} {quality}%",)
 
 # Shows disk usage of /home
