@@ -37,3 +37,6 @@ rofi.scroll-method: 1
 rofi.window-format: {w:5} {t}
 rofi.mesg: "hello"
 ! rofi.show-icons: true
+! Xcursor.size: 64
+!
+Xft.dpi: 96
