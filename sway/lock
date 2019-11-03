@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+import json
+import os
+import sys
+
+from sh import ffmpeg
+from sh import grim
+from sh import swaymsg
+
+def get_outputs():
+    """
+        Returns the list of active sway outputs
+    """
+    outputs = json.loads(swaymsg('-t', 'get_outputs', _tty_out=False).stdout)
+    return [ out['name'] for out in outputs if out['active'] ]
+
+def grab_and_blur(display, path):
+    """
+        Will screenshot+blur `display` at `path/display.png`
+    """
+    output = os.path.join(path, '{}.png'.format(display))
+    blur = ffmpeg.bake('-i', '-', '-y', '-vframes', '1',
+                       '-filter_complex', 'boxblur=10:2', output)
+    screengrab = grim.bake('-o', display, '-')
+    blur(screengrab())
+    return output
+
+# Would be tmpdir but can't cleanup because of `execv`
+dst_dir = '/tmp'
+lock_argv = ['swaylock']
+
+for display in get_outputs():
+    lock_argv.extend([
+        '-i',
+        '{}:{}'.format(
+            display,
+            grab_and_blur(display, dst_dir)
+        ),
+    ])
+
+lock_argv.extend(sys.argv[1:])
+
+os.execvp('swaylock', lock_argv)

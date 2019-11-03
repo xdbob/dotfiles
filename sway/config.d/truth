@@ -1,0 +1,12 @@
+# truth.xdbob.net config
+
+# Inputs
+input "1267:12375:ELAN1300:00_04F3:3057_Touchpad" {
+    dwt enabled
+    tap enabled
+    events disabled_on_external_mouse
+}
+
+# Outputs
+## eDP-1
+output 'Unknown 0x423D 0x00000000' background ~/.i3/wallpaper.png fill

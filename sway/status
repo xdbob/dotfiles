@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export LANG=fr_FR.UTF-8
+exec python ~/.i3/status.py
