@@ -24,3 +24,4 @@
     ~/.config/sway/lock: sway/lock
     ~/.config/sway/status: sway/status
     ~/.config/sway/idle.yaml: sway/idle.yaml
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
