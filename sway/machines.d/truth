@@ -9,4 +9,4 @@ input "1267:12375:ELAN1300:00_04F3:3057_Touchpad" {
 
 # Outputs
 ## eDP-1
-output 'Unknown 0x423D 0x00000000' background ~/.i3/wallpaper.png fill
+output 'Unknown 0x423D 0x00000000' background ~/.config/wallpapers/arch.png fill

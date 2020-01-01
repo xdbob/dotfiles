@@ -1,0 +1,18 @@
+# Inputs
+input "1739:30383:CUST0001:00_06CB:76AF_Touchpad" {
+	dwt enabled
+	tap enabled
+	events disabled_on_external_mouse
+}
+
+output "Unknown 0x5B2D 0x00000000" {
+	background ~/.config/wallpapers/arch.png fill
+}
+
+output "Ancor Communications Inc VG248 E4LMQS100257" {
+	background ~/.config/wallpapers/fallout.png fill
+}
+
+output "Unknown 2790 AMTH69A000338" {
+	background ~/.config/wallpapers/tardis-vert.png fill
+}

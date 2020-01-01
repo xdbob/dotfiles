@@ -19,7 +19,7 @@
     ~/.config/systemd/user/compton.service: systemd/compton.service
     ~/.config/systemd/user/xss-lock.service: systemd/xss-lock.service
     ~/.config/sway/config: sway/config
-    ~/.config/sway/config.d/truth: sway/config.d/truth
+    ~/.config/sway/machines.d: sway/machines.d
     ~/.config/sway/env: sway/env
     ~/.config/sway/lock: sway/lock
     ~/.config/sway/status: sway/status
