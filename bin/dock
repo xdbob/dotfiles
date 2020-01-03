@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# This script will shutdown $WLAN_INTERFACE when docked and if the net is lost,
+# reset the $ETH_INTERFACE interface (sometime needed on my dock)
+# It will also bring back the $WLAN_INTERFACE if not docked.
+
+WLAN_INTERFACE=wlan0
+ETH_INTERFACE=ether
+
+WLAN_STATUS="x$(ip link show $WLAN_INTERFACE | head -n 1 | cut -d' ' -f 9)"
+
+if [ "x$(loginctl -p Docked show-session)" != "xDocked=yes" ]; then
+	if [ "$WLAN_STATUS" = "xDOWN" ]; then
+		echo "Bringing back $WLAN_INTERFACE up"
+		sudo ip link set $WLAN_INTERFACE up
+	fi
+	exit 0
+fi
+
+if [ "$WLAN_STATUS" != "xDOWN" ]; then
+	echo "Shutting $WLAN_INTERFACE down"
+	sudo ip link set $WLAN_INTERFACE down
+fi
+
+for i in $(seq 3); do
+	if ping -W 1 -c 1 8.8.8.8 > /dev/null 2>/dev/null; then
+		exit 0
+	fi
+done
+
+echo "Can't reach google, restarting ether interface" >&2
+sudo ip link set $ETH_INTERFACE down
+sleep 0.5s
+sudo ip link set $ETH_INTERFACE up
+
+for i in $(seq 10); do
+	if networkctl status ether | grep 'routable (configured)' > /dev/null 2>/dev/null; then
+		break
+	fi
+	sleep 0.5s
+done
+
+for i in $(seq 3); do
+	if ping -W 1 -c 1 8.8.8.8 > /dev/null 2>/dev/null; then
+		exit 0
+	fi
+done
+
+echo "Can't reach internet" >&2
+exit 1
