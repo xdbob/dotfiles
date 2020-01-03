@@ -216,6 +216,8 @@ for_window [class="Steam"] {
 # DPI (X11)
 exec xrdb -load ~/.Xresources
 
+for_window [shell="xwayland"] title_format "%title :: %shell"
+
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
 include ~/.config/sway/machines.d/`hostname`
