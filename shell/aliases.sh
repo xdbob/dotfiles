@@ -19,6 +19,7 @@ alias mutt='neomutt'
 alias yaourt='nice -n 1 yaourt'
 alias make='nice -n 1 make'
 alias makepkg='nice -n 1 makepkg'
+alias lynx='lynx -vikeys'
 
 function mailsync() {
 	if [ $# -eq 0 ]; then
