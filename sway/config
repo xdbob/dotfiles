@@ -213,6 +213,9 @@ for_window [class="Steam"] {
 	border pixel 0
 }
 
+# DPI (X11)
+exec xrdb -load ~/.Xresources
+
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
 include ~/.config/sway/machines.d/`hostname`
