@@ -47,6 +47,9 @@ if [[ "${terminfo[kend]}" != "" ]]; then
 	bindkey "${terminfo[kend]}"  end-of-line		# [End] - Go to end of line
 fi
 
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+
 bindkey ' ' magic-space						# [Space] - do history expansion
 
 bindkey '^[[1;5C' forward-word					# [Ctrl-RightArrow] - move forward one word
@@ -59,11 +62,16 @@ fi
 bindkey '^?' backward-delete-char				# [Backspace] - delete backward
 if [[ "${terminfo[kdch1]}" != "" ]]; then
 	bindkey "${terminfo[kdch1]}" delete-char		# [Delete] - delete forward
+	bindkey -M vicmd "${terminfo[kdch1]}" delete-char	# [Delete] - delete forward
 else
 	bindkey "^[[3~" delete-char
 	bindkey "^[3;5~" delete-char
 	bindkey "\e[3~" delete-char
 fi
+
+function run_ls { echo ''; ls; zle reset-prompt }
+zle -N run_ls
+bindkey -M vicmd 'p' run_ls
 
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line

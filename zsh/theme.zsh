@@ -31,6 +31,10 @@ PATH_BG=055 # Violet
 GIT_BG=022 # Dark green
 VENV_BG=018 # Dark blue
 CTX_FG=black
+VI_N_BG=026 # DodgerBlue3
+VI_N_FG=$PRIMARY_FG
+VI_I_BG=022 # DarkGreen
+VI_I_FG=$PRIMARY_FG
 # Characters
 SEGMENT_SEPARATOR="\ue0b0"
 PLUSMINUS="\u00b1"
@@ -122,16 +126,28 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_vi_mode() {
+  case ${KEYMAP} in
+    (vicmd) prompt_segment $VI_N_BG $VI_N_FG "N" ;;
+    (main|viins|*) prompt_segment $VI_I_BG $VI_I_FG "I";;
+  esac
+}
+
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
+  prompt_vi_mode
   prompt_status
   prompt_context
   prompt_virtualenv
   prompt_dir
   prompt_git
   prompt_end
+}
+
+zle-keymap-select() {
+  zle reset-prompt
 }
 
 prompt_agnoster_precmd() {
@@ -157,6 +173,7 @@ prompt_agnoster_setup() {
 
 if [ "$TERM" != "linux" ]; then
   prompt_agnoster_setup "$@"
+  zle -N zle-keymap-select
 else
   PROMPT="%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# "
 fi
