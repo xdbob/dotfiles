@@ -213,6 +213,12 @@ for_window [class="Steam"] {
 	border pixel 0
 }
 
+for_window [app_id="firefox" title="^Picture-in-Picture$"] {
+	floating enable
+	sticky enable
+	move position 1270 px 690 px
+}
+
 # DPI (X11)
 exec xrdb -load ~/.Xresources
 
