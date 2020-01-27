@@ -26,3 +26,4 @@
     ~/.config/sway/idle.yaml: sway/idle.yaml
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.local/share/applications/binary-ninja.desktop: shortcuts/binary-ninja.desktop
+    ~/.config/wofi: wofi

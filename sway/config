@@ -27,7 +27,7 @@ set $right l
 set $term ~/.i3/i3-sensible-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu j4-dmenu-desktop
+set $menu wofi
 # xargs swaymsg exec --
 
 set $lock loginctl lock-session $XDG_SESSION_ID
