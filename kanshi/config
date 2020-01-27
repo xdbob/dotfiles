@@ -1,0 +1,10 @@
+laptop-base {
+	output "Unknown 0x5B2D 0x00000000" enable position 0,0
+	exec mako-output "Unknown 0x5B2D 0x00000000" && notify-send -u low "kanshi: profile base enabled"
+}
+laptop-work {
+	output "Unknown 0x5B2D 0x00000000" disable
+	output "Ancor Communications Inc VG248 E4LMQS100257" enable position 0,700
+	output "Unknown 2790 AMTH69A000338" enable position 1920,0 transform 270
+	exec mako-output "Ancor Communications Inc VG248 E4LMQS100257" && notify-send -u low "kanshi: profile work enabled"
+}

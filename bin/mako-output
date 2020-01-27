@@ -1,0 +1,10 @@
+#!/bin/sh
+
+output=$(swaymsg -t get_outputs | jq -r ".[] | select((.make + \" \" + .model + \" \" + .serial) == \"$1\" or .name == \"$1\") | .name")
+
+if [ -z "$output" ]; then
+	echo "Output \"$1\" not found" >&2
+	exit 1
+fi
+
+exec makoctl set "output=$output"

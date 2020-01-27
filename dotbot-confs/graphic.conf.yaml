@@ -28,3 +28,4 @@
     ~/.local/share/applications/binary-ninja.desktop: shortcuts/binary-ninja.desktop
     ~/.config/wofi: wofi
     ~/.config/mako/config: mako/config
+    ~/.config/kanshi/config: kanshi/config
