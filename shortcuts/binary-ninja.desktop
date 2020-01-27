@@ -16,10 +16,10 @@ Comment=Binary ninja reverse engineering
 #Path=~/.bin/
 
 # The executable of the application, possibly with arguments.
-Exec=~/.bin/binaryninja
+Exec=binaryninja
 
 # The name of the icon that will be used to display this entry
-#Icon=
+Icon=/home/xdbob/.local/lib/binaryninja/docs/img/logo.png
 
 # Describes whether this application needs to be run in a terminal or not
 Terminal=false
