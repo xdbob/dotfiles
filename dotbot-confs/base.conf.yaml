@@ -23,6 +23,7 @@
     ~/.dir_colors: dir_colors
     ~/.signature: signature
     ~/.screenrc: screenrc
+    ~/.profile: profile
 
 - shell:
   - [touch ~/.customrc, Creating curstomrc]
