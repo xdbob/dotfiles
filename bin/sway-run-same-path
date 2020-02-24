@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Small script that tries to determine the PWD of the focused app
+# (in sway tiling window manager) and pass it to the newly spawned one.
+
+CMD="$1"
+shift
+FOCUSED_PID=""
+if [ ! type jq 2>/dev/null ]; then
+    echo "ERROR: jq not installed" >&2
+else
+    FOCUSED_PID="$(swaymsg -t get_tree | jq '.. | select(.type?) |
+        select(.type=="con") | select(.focused==true).pid')"
+fi
+
+FOCUSED_PWD=""
+# Check if $FOCUSED_PID is an integer
+if [ "$FOCUSED_PID" -eq "$FOCUSED_PID" 2>/dev/null ]; then
+    FOCUSED_PPID="$(ps -o pid= --ppid "$FOCUSED_PID" | awk '{print $1}')"
+    if [ "$FOCUSED_PPID" -eq "$FOCUSED_PPID" 2>/dev/null ]; then
+        FOCUSED_PWD="$(readlink "/proc/$FOCUSED_PPID/cwd")"
+    fi
+fi
+
+# Spawn terminal in background
+if [ -d "$FOCUSED_PWD" ]; then
+    cd "$FOCUSED_PWD"
+fi
+
+exec $CMD $@

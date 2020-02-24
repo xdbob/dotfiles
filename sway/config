@@ -60,6 +60,7 @@ set $lock loginctl lock-session $XDG_SESSION_ID
 
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec sway-run-same-path $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
