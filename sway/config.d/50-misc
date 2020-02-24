@@ -1,0 +1,8 @@
+seat * hide_cursor 5000
+
+# DPI (X11)
+exec xrdb -load ~/.Xresources
+
+for_window [shell="^((?!xdg_shell).)*$"] title_format "%title :: %shell"
+
+# vim: ft=conf

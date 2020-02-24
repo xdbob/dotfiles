@@ -1,0 +1,8 @@
+for_window [app_id="qemu"] floating enable
+
+for_window [class="Steam"] {
+	floating enable
+	border pixel 0
+}
+
+# vim: ft=conf

@@ -20,6 +20,7 @@
     ~/.config/systemd/user/xss-lock.service: systemd/xss-lock.service
     ~/.config/sway/config: sway/config
     ~/.config/sway/machines.d: sway/machines.d
+    ~/.config/sway/config.d: sway/config.d
     ~/.config/sway/env: sway/env
     ~/.config/sway/lock: sway/lock
     ~/.config/sway/status: sway/status
