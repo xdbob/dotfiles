@@ -1,6 +1,6 @@
 input "type:keyboard" {
   xkb_layout us
-  xkb_options caps:escape,compose:ralt
+  xkb_options caps:ctrl_modifier,compose:ralt
 }
 
 # vim: ft=conf
