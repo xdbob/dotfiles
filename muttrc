@@ -4,7 +4,7 @@ set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
 set sort='reverse-threads'
 set sort_aux='last-date-received'
 set folder='~/.mail/'
-set postponed='~/.cache/postponed-mails'
+set postponed='~/.cache/neomutt/postponed'
 
 # Mailboxes
 set nm_default_uri = "notmuch://$HOME/.mail/"
@@ -46,8 +46,9 @@ set sidebar_short_path=yes
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 
 set edit_headers=yes
-set header_cache = $HOME/.mutt/cache/headers
-set message_cachedir = $HOME/.mutt/cache/bodies
+set header_cache_backend = "gdbm"
+set header_cache = $HOME/.cache/neomutt/headers
+set message_cachedir = $HOME/.cache/neomutt/bodies
 
 # GPG Config
 set pgp_sign_as = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
