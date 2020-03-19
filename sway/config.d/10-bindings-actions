@@ -93,6 +93,9 @@
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # TODO: DOC
+    bindsym $mod+Shift+p sticky toggle
 #
 # Scratchpad:
 #
