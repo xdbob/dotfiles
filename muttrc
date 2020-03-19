@@ -56,6 +56,9 @@ set pgp_self_encrypt_as = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
 # Default + notmuch tags at the end of line
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s %> (%g)"
 
+unignore Message-ID
+set display_filter="$HOME/.mutt/lorifier/lorifier.py"
+
 source $HOME/.mutt/notmuch
 source $HOME/.mutt/bindings
 source $HOME/.mutt/colors
