@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for target in sway-session wayland-session graphical-session; do
+	if systemctl --user is-active "${target}.target" &> /dev/null; then
+		echo "${target}.target"
+		exit 0
+	fi
+done
+
+exit 0

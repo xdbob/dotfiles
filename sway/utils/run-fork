@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -n "$SWAY_BIND" ]; then
+	exec systemd-run --user -p BindsTo="$SWAY_BIND" -p EnvironmentFile=-$HOME/.config/sway/env -p Type=forking $@
+else
+	exec $@
+fi

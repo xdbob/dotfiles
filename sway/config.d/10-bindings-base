@@ -10,14 +10,14 @@ bindsym $mod+XF86MonBrightnessUp exec brightnessctl s 100%
 bindsym $mod+XF86MonBrightnessDown exec brightnessctl s 10%+
 
 # Start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec sway-run-same-path $term
+bindsym $mod+Return $run $term
+bindsym $mod+Shift+Return $run ~/.config/sway/utils/run-same-path $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+d exec $menu
+bindsym $mod+d $run_fork $menu
 
 bindsym $md+l exec $lock
 bindsym $mod+Delete exec $lock

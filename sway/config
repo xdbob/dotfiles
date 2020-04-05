@@ -29,10 +29,13 @@ set $term ~/.i3/i3-sensible-terminal
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi
 # xargs swaymsg exec --
+# Long running programs: run inside own cgroup (systemd-run)
+set $run exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run
+set $run_fork exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run-fork
 
 set $lock loginctl lock-session $XDG_SESSION_ID
 
-bar status_command ~/.config/sway/status
+bar status_command ~/.config/sway/utils/status
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*

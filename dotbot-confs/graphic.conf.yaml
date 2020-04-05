@@ -22,8 +22,7 @@
     ~/.config/sway/machines.d: sway/machines.d
     ~/.config/sway/config.d: sway/config.d
     ~/.config/sway/env: sway/env
-    ~/.config/sway/lock: sway/lock
-    ~/.config/sway/status: sway/status
+    ~/.config/sway/utils: sway/utils
     ~/.config/sway/idle.yaml: sway/idle.yaml
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.local/share/applications/binary-ninja.desktop: shortcuts/binary-ninja.desktop
