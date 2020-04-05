@@ -5,4 +5,9 @@ for_window [class="Steam"] {
 	border pixel 0
 }
 
+for_window [app_id="pavucontrol"] floating enable
+
+# qemu -> X11 forwarding
+for_window [class="qemu-system-.*"] floating enable
+
 # vim: ft=conf
