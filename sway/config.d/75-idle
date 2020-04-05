@@ -1,4 +1,5 @@
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [app_id="moonlight"] inhibit_idle fullscreen
+for_window [class="zoom"] inhibit_idle visible
 
 # vim: ft=conf
