@@ -10,4 +10,7 @@ for_window [app_id="pavucontrol"] floating enable
 # qemu -> X11 forwarding
 for_window [class="qemu-system-.*"] floating enable
 
+for_window [app_id="firefox" title="^Picture-in-Picture$"] mark video_overlay
+for_window [app_id="mpv" title="^BFMTV$"] mark video_overlay
+
 # vim: ft=conf
