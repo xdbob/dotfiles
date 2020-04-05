@@ -5,4 +5,6 @@ exec xrdb -load ~/.Xresources
 
 for_window [shell="^((?!xdg_shell).)*$"] title_format "%title :: %shell"
 
+focus_follows_mouse no
+
 # vim: ft=conf
