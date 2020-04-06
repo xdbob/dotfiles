@@ -12,5 +12,6 @@ for_window [class="qemu-system-.*"] floating enable
 
 for_window [app_id="firefox" title="^Picture-in-Picture$"] mark video_overlay
 for_window [app_id="mpv" title="^BFMTV$"] mark video_overlay
+for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] kill
 
 # vim: ft=conf
