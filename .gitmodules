@@ -9,4 +9,4 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "mutt/lorifier"]
 	path = mutt/lorifier
-	url = https://github.com/danrue/lorifier.git
+	url = https://github.com/xdbob/lorifier.git
