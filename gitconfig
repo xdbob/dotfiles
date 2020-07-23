@@ -45,3 +45,5 @@
 	whitespace = error-all
 [apply]
 	whitespace = error-all
+[sendemail]
+	smtpserver = /usr/bin/msmtp
