@@ -37,6 +37,6 @@ set $lock loginctl lock-session $XDG_SESSION_ID
 
 bar status_command ~/.config/sway/utils/status
 
-include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
 include ~/.config/sway/machines.d/`hostname`
+include /etc/sway/config.d/10-service.conf

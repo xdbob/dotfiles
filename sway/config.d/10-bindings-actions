@@ -68,6 +68,9 @@
 
     bindsym $mod+Shift+bracketright move workspace to output right
     bindsym $mod+Shift+bracketleft move workspace to output left
+    bindsym Control+Shift+bracketright move workspace to output up
+    bindsym Control+Shift+bracketleft move workspace to output down
+
 #
 # Layout stuff:
 #

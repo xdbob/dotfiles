@@ -16,3 +16,20 @@ output "Ancor Communications Inc VG248 E4LMQS100257" {
 output "Unknown 2790 AMTH69A000338" {
 	background ~/.config/wallpapers/tardis-vert.png fill
 }
+
+output 'Iiyama North America PLX2483H 1127942403743' {
+	background ~/.config/wallpapers/fallout.png fill
+}
+
+output 'Iiyama North America PLX2483H 1127942403754' {
+	background ~/.config/wallpapers/fallout.png fill
+}
+
+output 'Samsung Electric Company SyncMaster H9XQB35145' {
+	background ~/.config/wallpapers/vga.png fill
+}
+
+# TODO: sync this state with swayidle somehow
+# note: it fucks my swayidle conf, disabling
+#bindswitch --locked lid:on output "Unknown 0x5B2D 0x00000000" dpms off
+#bindswitch --locked lid:off output "Unknown 0x5B2D 0x00000000" dpms on
