@@ -15,6 +15,7 @@
     ~/.zshrc: zshrc
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.gnupg/dirmngr.conf: gnupg/dirmngr.conf
     ~/.signature: signature
     ~/.bin: bin
     ~/.pip/pip.conf: pip.conf
