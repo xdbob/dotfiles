@@ -31,3 +31,9 @@ function mailsync() {
 			mblabelsync post
 	fi
 }
+
+alias weather='curl https://wttr.in/'
+
+function lessgrep() {
+	grep -rn --color=always "$@" | less -R
+}
