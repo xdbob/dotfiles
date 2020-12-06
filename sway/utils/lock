@@ -1,44 +1,64 @@
 #!/usr/bin/python
 
+import asyncio
 import json
 import os
+import subprocess
 import sys
 
-from sh import ffmpeg
-from sh import grim
-from sh import swaymsg
 
 def get_outputs():
     """
-        Returns the list of active sway outputs
+       Returns the list of active sway outputs
     """
-    outputs = json.loads(swaymsg('-t', 'get_outputs', _tty_out=False).stdout)
+    cmd = [
+        'swaymsg',
+        '-t',
+        'get_outputs',
+    ]
+    outputs = json.loads(subprocess.check_output(cmd))
     return [ out['name'] for out in outputs if out['active'] ]
 
-def grab_and_blur(display, path):
+
+async def grab_and_blur(display, path):
     """
-        Will screenshot+blur `display` at `path/display.png`
+       Will screenshot+blur `display` at `path/display.png`
     """
     output = os.path.join(path, '{}.png'.format(display))
-    blur = ffmpeg.bake('-i', '-', '-y', '-vframes', '1',
-                       '-filter_complex', 'boxblur=10:2', output)
-    screengrab = grim.bake('-o', display, '-')
-    blur(screengrab())
+    screengrab = subprocess.Popen(['grim', '-o', display, '-'], stdout=subprocess.PIPE)
+    blur = await asyncio.subprocess.create_subprocess_exec('ffmpeg',
+            '-loglevel', 'quiet','-y',
+            '-i', '-', '-vframes', '1', '-filter_complex', 'boxblur=10:2',
+            output,
+            stdin=screengrab.stdout)
+    await blur.wait()
+    # screengrab should already be dead
+    screengrab.wait()
+
     return output
 
-# Would be tmpdir but can't cleanup because of `execv`
-dst_dir = '/tmp'
-lock_argv = ['swaylock']
 
-for display in get_outputs():
-    lock_argv.extend([
-        '-i',
-        '{}:{}'.format(
-            display,
-            grab_and_blur(display, dst_dir)
-        ),
-    ])
+async def main():
+    # Would be tmpdir but can't cleanup because of `execv`
+    dst_dir = '/tmp'
+    lock_argv = ['swaylock']
+    outputs = get_outputs()
+    grab_routines = []
 
-lock_argv.extend(sys.argv[1:])
+    for display in outputs:
+        grab_routines.append(grab_and_blur(display, dst_dir))
 
-os.execvp('swaylock', lock_argv)
+    images = await asyncio.gather(*grab_routines)
+
+    for i, display in enumerate(outputs):
+        lock_argv.extend([
+            '-i',
+            f'{display}:{images[i]}',
+        ])
+
+    lock_argv.extend(sys.argv[1:])
+    return lock_argv
+
+if __name__ == '__main__':
+    lock_cmd = asyncio.run(main())
+    os.execvp(lock_cmd[0], lock_cmd)
