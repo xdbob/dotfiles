@@ -7,7 +7,7 @@ set folder='~/.mail/'
 set postponed='~/.cache/neomutt/postponed'
 
 # Mailboxes
-set nm_default_uri = "notmuch://$HOME/.mail/"
+set nm_default_url = "notmuch://$HOME/.mail/"
 virtual-mailboxes "inbox"	"notmuch://?type=threads&query=tag:inbox and date:7d..now"
 virtual-mailboxes "pro-in"	"notmuch://?type=threads&query=tag:blade-inbox and date:7d..now"
 virtual-mailboxes "sent"	"notmuch://?type=threads&query=tag:Sent and date:1y..now"
@@ -43,7 +43,7 @@ set mailcap_path = $HOME/.mutt/mailcap
 set sidebar_width=20
 set sidebar_visible=yes
 set sidebar_short_path=yes
-set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_format = '%D%?F? [%F]?%* %?N?%N/?%S'
 
 set edit_headers=yes
 set header_cache_backend = "gdbm"
@@ -51,8 +51,8 @@ set header_cache = $HOME/.cache/neomutt/headers
 set message_cachedir = $HOME/.cache/neomutt/bodies
 
 # GPG Config
-set pgp_sign_as = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
-set pgp_self_encrypt_as = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
+set pgp_self_encrypt = yes
+set pgp_default_key = 4C3AEF45D70C65052D3F37E02A5F5236CFB70DEC
 
 # Default + notmuch tags at the end of line
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s %> (%g)"
