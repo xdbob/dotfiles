@@ -45,7 +45,8 @@ load-module module-switch-on-port-available
 ### Automatically load driver modules depending on the hardware available
 .ifexists module-udev-detect.so
 # Disable timer based scheduling
-load-module module-udev-detect tsched=0
+#load-module module-udev-detect tsched=0
+load-module module-udev-detect
 .else
 ### Use the static hardware detection module (for systems that lack udev support)
 load-module module-detect
@@ -106,7 +107,8 @@ load-module module-default-device-restore
 
 ### Automatically move streams to the default sink if the sink they are
 ### connected to dies, similar for sources
-load-module module-rescue-streams
+## TODO: FIXME: obsolete
+#load-module module-rescue-streams
 
 ### Make sure we always have a sink around, even if it is a null sink.
 load-module module-always-sink
@@ -144,4 +146,4 @@ load-module module-filter-apply
 #set-default-source input
 
 # automatically switch to newly-connected devices
-load-module module-switch-on-connect
+load-module module-switch-on-connect blacklist="USB"
