@@ -7,6 +7,7 @@ timeouts:
   - timeout: 600
     command: 'swaymsg "output * dpms off"'
     resume: 'swaymsg "output * dpms on"'
+idlehint: '10'
 before-sleep: '~/.config/sway/utils/lock --daemonize'
 lock: '~/.config/sway/utils/lock --daemonize'
 unlock: 'sh -c "pkill -u $(id -u) -9 swaylock"'

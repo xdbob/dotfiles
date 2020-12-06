@@ -5,11 +5,16 @@ input "1739:30383:CUST0001:00_06CB:76AF_Touchpad" {
 	events disabled_on_external_mouse
 }
 
-output "Unknown 0x5B2D 0x00000000" {
-	background ~/.config/wallpapers/arch.png fill
+input "1133:49291:Logitech_G502_HERO_Gaming_Mouse" {
+	accel_profile flat
 }
 
-output "Ancor Communications Inc VG248 E4LMQS100257" {
+output "Unknown 0x5B2D 0x00000000" {
+	background ~/.config/wallpapers/arch.png fill
+	subpixel rgb
+}
+
+output "Unknown 2790 AMTH69A000708" {
 	background ~/.config/wallpapers/fallout.png fill
 }
 
@@ -27,6 +32,21 @@ output 'Iiyama North America PLX2483H 1127942403754' {
 
 output 'Samsung Electric Company SyncMaster H9XQB35145' {
 	background ~/.config/wallpapers/vga.png fill
+}
+
+output "Unknown 2590G5 0x00000F4C" {
+	background ~/.config/wallpapers/fallout.png fill
+	subpixel rgb
+}
+output "Unknown 2590G5 0x00000F53" {
+	background ~/.config/wallpapers/halo.png fill
+	subpixel rgb
+}
+output "Samsung Electric Company SyncMaster HSHY805110" {
+	background ~/.config/wallpapers/inception-vga.png fill
+}
+output "Ancor Communications Inc ASUS VG236 B1LMTF035851" {
+	background ~/.config/wallpapers/fallout.png fill
 }
 
 # TODO: sync this state with swayidle somehow
