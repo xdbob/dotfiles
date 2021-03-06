@@ -6,12 +6,13 @@ for_window [class="Steam"] {
 }
 
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="lutris"] floating enable
 
 # qemu -> X11 forwarding
 for_window [class="qemu-system-.*"] floating enable
 
 for_window [app_id="firefox" title="^Picture-in-Picture$"] mark video_overlay
 for_window [app_id="mpv" title="^BFMTV$"] mark video_overlay
-for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] kill
+for_window [app_id="firefox" title="^Firefox [—-] Sharing Indicator$"] kill
 
 # vim: ft=conf

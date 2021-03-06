@@ -1,6 +1,12 @@
+if [ -z "${_HOMEPROFILE+x}" ]; then
+	source $HOME/.profile
+fi
+
 for sh in $(find $HOME/.shell/ -name \*.sh); do
 	source $sh
 done
 
 # Custom shell config
 source $HOME/.customrc
+
+# vim: ft=sh

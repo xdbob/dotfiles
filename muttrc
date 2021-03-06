@@ -46,7 +46,7 @@ set sidebar_short_path=yes
 set sidebar_format = '%D%?F? [%F]?%* %?N?%N/?%S'
 
 set edit_headers=yes
-set header_cache_backend = "gdbm"
+set header_cache_backend = "lmdb"
 set header_cache = $HOME/.cache/neomutt/headers
 set message_cachedir = $HOME/.cache/neomutt/bodies
 

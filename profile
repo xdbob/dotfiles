@@ -1,3 +1,4 @@
+_HOMEPROFILE=1
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin:$HOME/.bin:$HOME/.local/bin
 export EDITOR='vim'
@@ -14,3 +15,5 @@ CCACHEDIR=/usr/lib/ccache/bin
 if [ -d $CCACHEDIR ]; then
 	export PATH=$CCACHEDIR:$PATH
 fi
+
+# vim: ft=sh
