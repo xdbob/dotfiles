@@ -1,0 +1,19 @@
+#!/bin/bash
+
+OUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused==false) | .name')
+
+function reactivate() {
+	echo "re enabling outputs"
+	for out in $OUT; do
+		swaymsg "output $out dpms on"
+	done
+}
+
+trap reactivate EXIT
+
+echo "Disabling outputs"
+for out in $OUT; do
+	swaymsg "output $out dpms off"
+done
+
+sleep infinity
