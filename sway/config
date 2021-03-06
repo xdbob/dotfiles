@@ -35,7 +35,7 @@ set $run_fork exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/swa
 
 set $lock loginctl lock-session $XDG_SESSION_ID
 
-bar status_command ~/.config/sway/utils/status
+#bar status_command ~/.config/sway/utils/status
 
 include ~/.config/sway/config.d/*
 include ~/.config/sway/machines.d/`hostname`
