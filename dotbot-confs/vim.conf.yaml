@@ -5,7 +5,6 @@
 
 - shell:
   - [git submodule update --init --recursive vim, Installing vim submodules]
-  - [./vim/h2cppx-postinstall.sh, Installing h2cppx dependancies]
   - [./vim/ycm-compile.sh, Installing YouCompleteMe]
 
 - clean: ['~']
