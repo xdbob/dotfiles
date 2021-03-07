@@ -1,3 +1,7 @@
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+SyncState *
+
 IMAPAccount gmail
 # Address to connect to
 Host imap.gmail.com
@@ -36,31 +40,31 @@ Inbox ~/.mail/inbox
 SubFolders Verbatim
 
 Channel gmail-inbox
-Master :gmail-remote:Inbox
-Slave :gmail-local:inbox
+Far :gmail-remote:INBOX
+Near :gmail-local:inbox
 #Patterns "INBOX"
 
 Channel gmail-archive
-Master :gmail-remote:"[Gmail]/Tous les messages"
-Slave :gmail-local:All
+Far :gmail-remote:"[Gmail]/Tous les messages"
+Near :gmail-local:All
 
 Channel gmail-sent
-Master :gmail-remote:"[Gmail]/Sent"
-Slave :gmail-local:Sent
+Far :gmail-remote:"[Gmail]/Sent"
+Near :gmail-local:Sent
 
 Channel gmail-junk
-Master :gmail-remote:"[Gmail]/Spam"
-Slave :gmail-local:Junk
+Far :gmail-remote:"[Gmail]/Spam"
+Near :gmail-local:Junk
 
 # All the rest
 Channel gmail-all
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns * ![Gmail]* !Inbox !All !Sent !Junk !blade-inbox
+Far :gmail-remote:
+Near :gmail-local:
+Patterns * ![Gmail]* !INBOX !All !Sent !Junk !blade-inbox
 
 Channel blade-inbox
-Master :blade-remote:Inbox
-Slave  :gmail-local:blade-inbox
+Far :blade-remote:INBOX
+Near  :gmail-local:blade-inbox
 
 Group gmail
 Channel gmail-inbox
@@ -71,9 +75,3 @@ Channel gmail-junk
 Group pro
 Channel blade-inbox
 
-# Or include everything
-#Patterns *
-# Automatically create missing mailboxes, both locally and on the server
-Create Both
-# Save the synchronization state files in the relevant directory
-SyncState *
