@@ -1,4 +1,4 @@
-autoload -U compaudit compinit
+autoload -U compaudit compinit bashcompinit
 
 comp_file="${HOME}/.cache/zcompdump"
 cache_dir="$HOME/.cache"
@@ -54,3 +54,22 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
+
+# Load bash system's bash completion
+bashcompinit
+function load_bash_completion() {
+	local tool="$1"
+	if whence -p "$tool" &>/dev/null; then
+		for compdir in /usr/share/bash-completion/completions /etc/bash_completion.d; do
+			if [[ -f "$compdir/$tool" ]]; then
+				source "$compdir/$tool"
+				break
+			fi
+		done
+	fi
+}
+
+# the `perf` completion script is doing weird magic voodo and breaks whatever
+# bash-completion script loaded before… we shall load it first then -_-
+load_bash_completion perf
+load_bash_completion woob
