@@ -10,3 +10,6 @@
 [submodule "mutt/lorifier"]
 	path = mutt/lorifier
 	url = https://github.com/xdbob/lorifier.git
+[submodule "zsh/zsh-completions"]
+	path = zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git

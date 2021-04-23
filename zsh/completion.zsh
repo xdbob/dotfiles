@@ -1,17 +1,23 @@
 autoload -U compaudit compinit bashcompinit
 
-comp_file="${HOME}/.cache/zcompdump"
-cache_dir="$HOME/.cache"
-version_file="$cache_dir/zsh_version"
-if [ ! -f "$version_file" ] || [ "${ZSH_VERSION}" != "$(cat $version_file)" ]; then
-	rm -f -- "$comp_file"
-	mkdir -p "$cache_dir"
-	echo -n "${ZSH_VERSION}" > "$version_file"
-fi
-compinit -i -d "$comp_file"
-unset version_file
-unset comp_file
-unset cache_dir
+fpath+="${HOME}/.zsh/zsh-completions/src"
+
+function load_and_generate_cache() {
+	local cache_dir="$HOME/.cache"
+	local comp_file="$cache_dir/zcompdump"
+	local version_file="$cache_dir/zsh_version"
+	local cache_version="${ZSH_VERSION}+1"
+	if [[ ! -f "$version_file" ]] ||
+	   [[ "x${cache_version}" != "x$(cat $version_file)" ]]; then
+		rm -f -- "$comp_file"
+		mkdir -p "$cache_dir"
+		echo -n "${cache_version}" > "$version_file"
+	fi
+	compinit -i -d "$comp_file"
+}
+
+load_and_generate_cache
+unset -f load_and_generate_cache
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
@@ -58,18 +64,16 @@ zstyle '*' single-ignored show
 # Load bash system's bash completion
 bashcompinit
 function load_bash_completion() {
+	emulate -L bash
 	local tool="$1"
 	if whence -p "$tool" &>/dev/null; then
-		for compdir in /usr/share/bash-completion/completions /etc/bash_completion.d; do
+		for compdir in /etc/bash_completion.d /usr/share/bash-completion/completions; do
 			if [[ -f "$compdir/$tool" ]]; then
 				source "$compdir/$tool"
 				break
 			fi
-		done
+	done
 	fi
 }
 
-# the `perf` completion script is doing weird magic voodo and breaks whatever
-# bash-completion script loaded before… we shall load it first then -_-
-load_bash_completion perf
 load_bash_completion woob
