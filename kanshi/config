@@ -1,38 +1,38 @@
 profile laptop-base {
-	output "Unknown 0x5B2D 0x00000000" enable position 0,0
-	exec mako-output "Unknown 0x5B2D 0x00000000" && notify-send -u low "kanshi: profile base enabled"
+	output "Unknown 0x5B2D 0x00000000" enable position 0,0 transform normal
+	exec /home/xdbob/.bin/mako-output "Unknown 0x5B2D 0x00000000" && notify-send -u low "kanshi: profile base enabled"
 }
 profile home {
-	output "Unknown 0x5B2D 0x00000000" enable position 0,0
-	output "Unknown 2590G5 0x00000F4C" enable position 1920,0 mode 1920x1080@75Hz
-	output "Unknown 2590G5 0x00000F53" enable position 3840,0 mode 1920x1080@75Hz
-	exec mako-output "Unknown 2590G5 0x00000F4C" && notify-send -u low "kanshi: profile home enabled"
+	output "Unknown 0x5B2D 0x00000000" enable position 0,0 transform normal
+	output "Unknown 2590G5 0x00000F4C" enable position 3840,0 mode 1920x1080@75Hz transform normal
+	output "Unknown 2590G5 0x00000F53" enable position 1920,0 mode 1920x1080@75Hz transform normal
+	exec /home/xdbob/.bin/mako-output "Unknown 2590G5 0x00000F4C" && notify-send -u low "kanshi: profile home enabled"
 }
 profile laptop-work {
 	output "Unknown 0x5B2D 0x00000000" disable
-	output "Unknown 2790 AMTH69A000708" enable position 0,700
+	output "Unknown 2790 AMTH69A000708" enable position 0,700 transform normal
 	output "Unknown 2790 AMTH69A000338" enable position 1920,0 transform 90
-	exec mako-output "Unknown 2790 AMTH69A000708" && notify-send -u low "kanshi: profile work enabled"
+	exec /home/xdbob/.bin/mako-output "Unknown 2790 AMTH69A000708" && notify-send -u low "kanshi: profile work enabled"
+}
+profile work-triple {
+	output "Unknown 0x5B2D 0x00000000" enable position 0,700 transform normal
+	output "Unknown 2790 AMTH69A000708" enable position 1920,700 transform normal
+	output "Unknown 2790 AMTH69A000338" enable position 3840,0 transform 90
+	exec /home/xdbob/.bin/mako-output "Ancor Communications Inc VG248 E4LMQS100257" && notify-send -u low "kanshi: profile work (triple) enabled"
 }
 profile kynzie-desk {
-	output "Unknown 0x5B2D 0x00000000" enable position 0,0
+	output "Unknown 0x5B2D 0x00000000" enable position 0,0 transform normal
 	output "Iiyama North America PLX2483H 1127942403743" enable position 1920,0
 	exec notify-send -u low "kanshi: kynzie desk profile enabled"
 }
-#profile work-triple {
-#	output "Unknown 0x5B2D 0x00000000" enable position 0,700
-#	output "Ancor Communications Inc VG248 E4LMQS100257" enable position 1920,700
-#	output "Unknown 2790 AMTH69A000338" enable position 3840,0 transform 90
-#	exec mako-output "Ancor Communications Inc VG248 E4LMQS100257" && notify-send -u low "kanshi: profile work (triple) enabled"
-#}
 profile cinema-shlag {
-	output "Iiyama North America PLX2483H 1127942403754" enable position 0,0
-	output "Unknown 0x5B2D 0x00000000" enable position 1920,0
+	output "Iiyama North America PLX2483H 1127942403754" enable position 0,0 transform normal
+	output "Unknown 0x5B2D 0x00000000" enable position 1920,0 transform normal
 	exec notify-send -u low "kanshi: cinema-shlag profile enabled"
 }
 profile home-paris {
-	output "Unknown 0x5B2D 0x00000000" enable position 0,0
-	output "Samsung Electric Company SyncMaster HSHY805110" enable mode 1280x1024@75Hz position 1920,0
-	output "Ancor Communications Inc ASUS VG236 B1LMTF035851" enable position 3200,0
+	output "Unknown 0x5B2D 0x00000000" enable position 0,0 transform normal
+	output "Samsung Electric Company SyncMaster HSHY805110" enable mode 1280x1024@75Hz position 1920,0 transform normal
+	output "Ancor Communications Inc ASUS VG236 B1LMTF035851" enable position 3200,0 transform normal
 	exec notify-send -u low "kanshi: home-paris profile enabled"
 }
