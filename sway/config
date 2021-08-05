@@ -30,8 +30,10 @@ set $term ~/.i3/i3-sensible-terminal
 set $menu wofi
 # xargs swaymsg exec --
 # Long running programs: run inside own cgroup (systemd-run)
-set $run exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run
-set $run_fork exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run-fork
+#set $run exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run
+#set $run_fork exec SWAY_BIND="$(~/.config/sway/utils/curr-target)" ~/.config/sway/utils/run-fork
+set $run_exec exec
+set $run_fork exec
 
 set $lock loginctl lock-session $XDG_SESSION_ID
 
@@ -39,4 +41,4 @@ set $lock loginctl lock-session $XDG_SESSION_ID
 
 include ~/.config/sway/config.d/*
 include ~/.config/sway/machines.d/`hostname`
-include /etc/sway/config.d/10-service.conf
+include /etc/sway/config.d/*
