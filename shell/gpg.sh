@@ -2,7 +2,7 @@ function reshadow() {
 	local keydir="$(gpgconf --list-dirs homedir)/private-keys-v1.d"
 	if [ -d "${keydir}" ]; then
 		for key in $(find ${keydir} -name \*.key); do
-			if [ "$(head -c 24 $key | tail -c 20)" = "shadowed-private-key" ]; then
+			if grep -I "shadowed-private-key" "$key" &> /dev/null; then
 				rm -f "$key"
 			fi
 		done

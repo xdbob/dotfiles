@@ -7,6 +7,8 @@ for sh in $(find $HOME/.shell/ -name \*.sh); do
 done
 
 # Custom shell config
-source $HOME/.customrc
+if [ -f "$HOME/.customrc" ]; then
+	source $HOME/.customrc
+fi
 
 # vim: ft=sh
