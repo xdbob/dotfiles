@@ -15,4 +15,8 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] mark video_overlay
 for_window [app_id="mpv" title="^BFMTV$"] mark video_overlay
 for_window [app_id="firefox" title="^Firefox [—-] Sharing Indicator$"] kill
 
+for_window [class="battle.net.exe"] floating enable
+# Hum...
+for_window [class="explorer.exe" title="^Wine System Tray$"] kill
+
 # vim: ft=conf
