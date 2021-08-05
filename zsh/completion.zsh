@@ -72,7 +72,7 @@ function load_bash_completion() {
 				source "$compdir/$tool"
 				break
 			fi
-	done
+		done
 	fi
 }
 
