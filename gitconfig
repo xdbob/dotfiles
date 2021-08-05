@@ -16,6 +16,7 @@
 [alias]
 	cm = commit -m
 	co = checkout
+	reco = !git commit -eF $(git rev-parse --git-dir)/COMMIT_EDITMSG
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ls = ls-tree -r master --name-only
 	st = status
