@@ -8,18 +8,20 @@ set postponed='~/.cache/neomutt/postponed'
 
 # Mailboxes
 set nm_default_url = "notmuch://$HOME/.mail/"
-virtual-mailboxes "inbox"	"notmuch://?type=threads&query=tag:inbox and date:7d..now"
-virtual-mailboxes "pro-in"	"notmuch://?type=threads&query=tag:blade-inbox and date:7d..now"
-virtual-mailboxes "sent"	"notmuch://?type=threads&query=tag:Sent and date:1y..now"
-virtual-mailboxes "lse-current"	"notmuch://?type=threads&query=tag:MLs/LSE"
-virtual-mailboxes "strace"	"notmuch://?type=threads&query=tag:MLs/Strace and date:1y..now"
-virtual-mailboxes "KVM"		"notmuch://?type=threads&query=tag:MLs/kvm and date:14d..now"
-virtual-mailboxes "Virtu"	"notmuch://?type=threads&query=tag:MLs/Virtu and date:14d..now"
-virtual-mailboxes "QEMU"	"notmuch://?type=threads&query=tag:MLs/qemu and date:10d..now"
-virtual-mailboxes "all (2W)"	"notmuch://?type=threads&query=tag:All and date:7d..now"
+virtual-mailboxes "inbox"	"notmuch://?type=threads&query=tag:gmail/inbox and date:7d..now"
+virtual-mailboxes "pro-in"	"notmuch://?type=threads&query=tag:gmail/blade-inbox and date:7d..now"
+virtual-mailboxes "perso"	'notmuch://?type=threads&query=tag:"/^(xdbob|damhet)/"'
+virtual-mailboxes "sent"	"notmuch://?type=threads&query=tag:gmail/Sent and date:1y..now"
+virtual-mailboxes "lse-current"	"notmuch://?type=threads&query=tag:gmail/MLs/LSE"
+virtual-mailboxes "strace"	"notmuch://?type=threads&query=tag:gmail/MLs/Strace and date:1y..now"
+virtual-mailboxes "KVM"		"notmuch://?type=threads&query=tag:gmail/MLs/kvm and date:14d..now"
+virtual-mailboxes "Virtu"	"notmuch://?type=threads&query=tag:gmail/MLs/Virtu and date:14d..now"
+virtual-mailboxes "QEMU"	"notmuch://?type=threads&query=tag:gmail/MLs/qemu and date:10d..now"
+virtual-mailboxes "btrfs"	"notmuch://?type=threads&query=tag:gmail/MLs/btrfs and date:14d..now"
+virtual-mailboxes "all (2W)"	"notmuch://?type=threads&query=tag:gmail/All and date:7d..now"
 virtual-mailboxes "Unreads"	"notmuch://?type=threads&query=tag:unread"
-virtual-mailboxes "all"		"notmuch://?type=threads&query=tag:All"
-virtual-mailboxes "junk"	"notmuch://?type=threads&query=tag:Junk"
+virtual-mailboxes "all"		"notmuch://?type=threads&query=tag:gmail/All"
+virtual-mailboxes "junk"	"notmuch://?type=threads&query=tag:gmail/Junk"
 
 set realname = "Antoine Damhet"
 set signature = $HOME/.signature
@@ -31,7 +33,9 @@ alternates ^antoine.damhet@lse.epita.fr$ ^damhet_a@lse.epita.fr$ \
            ^antoine.damhet@gmail.com$ \
            ^xdbob@acu.epita.fr$ ^antoine.damhet@acu.epita.fr$ ^damhet_a@acu.epita.fr$ \
            ^damhet_a@epita.fr$ ^antoine.damhet@epita.fr$ \
-           ^xdbob@live.fr$ ^antoine.damhet@blade-group.com$
+           ^xdbob@live.fr$ ^antoine.damhet@blade-group.com$ \
+           ^antoine@damhet.fr$ ^admin@damhet.fr$ ^xdbob@damhet.fr$ \
+           ^antoine@xdbob.net$ ^admin@xdbob.net$ ^xdbob@xdbob.net$
 set sendmail="msmtp --read-envelope-from"
 
 # HTML handling

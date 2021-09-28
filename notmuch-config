@@ -33,7 +33,7 @@ path=/home/xdbob/.mail
 [user]
 name=Antoine Damhet
 primary_email=xdbob@lse.epita.fr
-other_email=antoine.damhet@lse.epita.fr;antoine.damhet@gmail.com;antoine.damhet@epita.fr;damhet_a@epita.fr;antoine.damhet@acu.epita.fr;xdbob@acu.epita.fr;xdbob@live.fr;antoine.damhet@blade-group.com
+other_email=antoine.damhet@lse.epita.fr;antoine.damhet@gmail.com;antoine.damhet@epita.fr;damhet_a@epita.fr;antoine.damhet@acu.epita.fr;xdbob@acu.epita.fr;xdbob@live.fr;antoine.damhet@blade-group.com;antoine@damhet.fr;admin@damhet.fr;xdbob@damhet.fr;antoine@xdbob.net;xdbob@xdbob.net;admin@xdbob.net
 
 # Configuration for "notmuch new"
 #
