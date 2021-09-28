@@ -25,6 +25,7 @@
     ~/.signature: signature
     ~/.screenrc: screenrc
     ~/.profile: profile
+    ~/.config/environment.d/misc.conf: environment.d/misc.conf
 
 - shell:
   - [touch ~/.customrc, Creating curstomrc]

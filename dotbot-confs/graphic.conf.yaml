@@ -30,3 +30,6 @@
     ~/.config/mako/config: mako/config
     ~/.config/kanshi/config: kanshi/config
     ~/.config/waybar/config: waybar/config
+    ~/.config/environment.d/wayland.conf: environment.d/wayland.conf
+    ~/.config/environment.d/vaapi.conf: environment.d/vaapi.conf
+    ~/.config/environment.d/firefox.conf: environment.d/firefox.conf
