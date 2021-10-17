@@ -50,6 +50,8 @@ set sidebar_visible=yes
 set sidebar_short_path=yes
 set sidebar_format = '%D%?F? [%F]?%* %?N?%N/?%S'
 
+set mail_check_stats = yes # needed for the sidebar stats at load, see: https://github.com/neomutt/neomutt/issues/3064
+
 set edit_headers=yes
 set header_cache_backend = "lmdb"
 set header_cache = $HOME/.cache/neomutt/headers
