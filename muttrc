@@ -35,7 +35,8 @@ alternates ^antoine.damhet@lse.epita.fr$ ^damhet_a@lse.epita.fr$ \
            ^damhet_a@epita.fr$ ^antoine.damhet@epita.fr$ \
            ^xdbob@live.fr$ ^antoine.damhet@blade-group.com$ \
            ^antoine@damhet.fr$ ^admin@damhet.fr$ ^xdbob@damhet.fr$ \
-           ^antoine@xdbob.net$ ^admin@xdbob.net$ ^xdbob@xdbob.net$
+           ^antoine@xdbob.net$ ^admin@xdbob.net$ ^xdbob@xdbob.net$ \
+           ^antoine.damhet@shadow.tech$
 set sendmail="msmtp --read-envelope-from"
 
 # HTML handling
