@@ -24,7 +24,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term ~/.i3/i3-sensible-terminal
+set $term ~/.config/sway/utils/spawn-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi

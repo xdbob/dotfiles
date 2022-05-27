@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Special handling
+if command -v alacritty &> /dev/null; then
+	# We try to spwan a window from an existing alacritty
+	if [[ $# -eq 0 ]]; then
+		if alacritty msg create-window --working-directory "$PWD" &> /dev/null; then
+			exit 0
+		fi
+	fi
+	exec alacritty "$@"
+fi
+
+# Generic handling
+for terminal in "$TERMINAL" foot termite urxvt terminator Eterm aterm xterm gnome-terminal; do
+	if command -v "$terminal" &> /dev/null;
+		exec "$terminal" "$@"
+	fi
+done
+
+exec swaynag -m 'No suitable terminal emulator found. Please install one.'

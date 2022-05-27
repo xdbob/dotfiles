@@ -8,6 +8,8 @@ for_window [class="Steam"] {
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="lutris"] floating enable
 
+for_window [app_id="chromium-browser"] border pixel 0
+
 # qemu -> X11 forwarding
 for_window [class="qemu-system-.*"] floating enable
 
@@ -18,5 +20,7 @@ for_window [app_id="firefox" title="^Firefox [—-] Sharing Indicator$"] kill
 for_window [class="battle.net.exe"] floating enable
 # Hum...
 for_window [class="explorer.exe" title="^Wine System Tray$"] kill
+
+for_window [class="Minecraft Launcher"] floating enable
 
 # vim: ft=conf
