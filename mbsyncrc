@@ -112,7 +112,6 @@ Near :xdbob-local:
 
 Group gmail
 Channel gmail-inbox
-Channel gmail-received
 Channel gmail-sent
 Channel gmail-junk
 

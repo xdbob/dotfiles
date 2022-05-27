@@ -11,7 +11,7 @@ set nm_default_url = "notmuch://$HOME/.mail/"
 virtual-mailboxes "inbox"	"notmuch://?type=threads&query=tag:gmail/inbox and date:7d..now"
 virtual-mailboxes "pro-in"	"notmuch://?type=threads&query=tag:gmail/blade-inbox and date:7d..now"
 virtual-mailboxes "perso"	'notmuch://?type=threads&query=tag:"/^(xdbob|damhet)/"'
-virtual-mailboxes "sent"	"notmuch://?type=threads&query=tag:gmail/Sent and date:1y..now"
+virtual-mailboxes "sent"	"notmuch://?type=threads&query=tag:gmail/Sent or tag:Sent"
 virtual-mailboxes "lse-current"	"notmuch://?type=threads&query=tag:gmail/MLs/LSE"
 virtual-mailboxes "strace"	"notmuch://?type=threads&query=tag:gmail/MLs/Strace and date:1y..now"
 virtual-mailboxes "KVM"		"notmuch://?type=threads&query=tag:gmail/MLs/kvm and date:14d..now"
@@ -26,7 +26,7 @@ virtual-mailboxes "junk"	"notmuch://?type=threads&query=tag:gmail/Junk"
 set realname = "Antoine Damhet"
 set signature = $HOME/.signature
 set from = "Antoine Damhet <xdbob@lse.epita.fr>"
-set record = +Sent
+set record = +gmail/Sent
 set reverse_name
 set reverse_realname
 alternates ^antoine.damhet@lse.epita.fr$ ^damhet_a@lse.epita.fr$ \

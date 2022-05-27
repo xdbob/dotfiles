@@ -17,3 +17,6 @@ function zsh_stats() {
 setopt interactivecomments
 # pylint: use the python from virtualenv
 alias pylint='python =pylint'
+
+# sstoraged
+alias sstoraged-env='cd ~/projects/blade/sstoraged && source .venv/bin/activate && rehash'

@@ -1,4 +1,5 @@
 {
+// todo: disk
     // "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
@@ -6,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight","battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "network#wlan", "cpu", "memory", "temperature", "backlight","battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "enable-bar-scroll": true,
@@ -94,7 +95,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% ({power:.3}W) {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -103,7 +104,15 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interface": "enp*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
+        "format-linked": "{ifname} (No IP) ⛔",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "network#wlan": {
+        "interface": "wlan*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
         "format-linked": "{ifname} (No IP) ⛔",

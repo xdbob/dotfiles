@@ -21,17 +21,6 @@ alias make='nice -n 1 make'
 alias makepkg='nice -n 1 makepkg'
 alias lynx='lynx -vikeys'
 
-function mailsync() {
-	if [ $# -eq 0 ]; then
-		mblabelsync all
-	else
-		mblabelsync pre \
-			mbsync $@; \
-			notmuch new && \
-			mblabelsync post
-	fi
-}
-
 alias weather='curl https://wttr.in/'
 
 function lessgrep() {

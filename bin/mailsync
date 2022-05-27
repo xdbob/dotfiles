@@ -1,0 +1,21 @@
+#!/bin/bash -xe
+
+if ! ping -W 1 -c 1 8.8.8.8 &>/dev/null; then
+	echo 'Skipping mail sync since no network connectivity'
+	exit 42
+fi
+
+lockfile -l1600 -r5 ~/.mail/.lock
+
+mblabelsync pre
+if [ $# -eq 0 ]; then
+	#mbsync -a
+	# sync only relevant mails by default
+	mbsync gmail pro damhet xdbob
+else
+	mbsync "$@"
+fi
+notmuch new
+mblabelsync post
+
+rm -f ~/.mail/.lock
