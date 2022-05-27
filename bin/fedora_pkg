@@ -1,0 +1,28 @@
+#!/bin/zsh -x
+
+if [[ ! -f "$1" ]]; then
+	echo "$1 not found" >&2
+	exit 1
+fi
+
+TMPDIR="$(mktemp -d)"
+
+# TRAPEXIT will run for each subshell, don't use them
+function TRAPEXIT {
+	sudo rm -rf -- "$TMPDIR"
+}
+
+sudo chown :mock "$TMPDIR"
+chmod g+rwx "$TMPDIR"
+
+BDIR="${1:h}"
+
+for src_file in "$BDIR"/*; do
+	ln -s "${src_file:P}" "${TMPDIR}/${src_file:t}"
+done
+rm -f "${TMPDIR}/out-rpm"
+
+sudo -u packager bash -c "cd \"${TMPDIR}\" && fedpkg --release f35 local"
+
+mkdir -p out-rpm
+rsync "$TMPDIR"/**/**.rpm out-rpm
