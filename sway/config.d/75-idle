@@ -1,5 +1,8 @@
 for_window [app_id="firefox"] inhibit_idle fullscreen
-for_window [app_id="moonlight"] inhibit_idle fullscreen
+for_window [app_id="moonlight"] {
+	inhibit_idle fullscreen
+	seat * hide_cursor 0
+}
 for_window [class="zoom"] inhibit_idle visible
 for_window [class="SpeedRunners.bin.x86_64"] inhibit_idle focus
 for_window [class="StepMania"] inhibit_idle focus
