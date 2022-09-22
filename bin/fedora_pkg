@@ -22,7 +22,7 @@ for src_file in "$BDIR"/*; do
 done
 rm -f "${TMPDIR}/out-rpm"
 
-sudo -u packager bash -c "cd \"${TMPDIR}\" && fedpkg --release f35 local"
+sudo -u packager bash -c "cd \"${TMPDIR}\" && fedpkg --release f36 local"
 
 mkdir -p out-rpm
 rsync "$TMPDIR"/**/**.rpm out-rpm
