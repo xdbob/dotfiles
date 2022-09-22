@@ -23,4 +23,8 @@ for_window [class="explorer.exe" title="^Wine System Tray$"] kill
 
 for_window [class="Minecraft Launcher"] floating enable
 
+for_window [class="nwmain-linux"] {
+	input * dwt disabled
+}
+
 # vim: ft=conf
