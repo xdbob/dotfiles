@@ -8,6 +8,13 @@ for_window [shell="^((?!xdg_shell).)*$"] title_format "%title :: %shell"
 focus_follows_mouse no
 
 # FIXME
-exec swayidle -w timeout 300 '~/.config/sway/utils/lock --daemonize' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' idlehint 10 before-sleep '~/.config/sway/utils/lock --daemonize' lock '~/.config/sway/utils/lock --daemonize' unlock 'sh -c "pkill -u $(id -u) -9 swaylock"'
+exec swayidle -w \
+	timeout 300 '~/.config/sway/utils/lock --daemonize' \
+	timeout 330 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+	idlehint 10 \
+	before-sleep '~/.config/sway/utils/lock --daemonize' \
+	lock '~/.config/sway/utils/lock --daemonize' \
+	unlock 'sh -c "pkill -u $(id -u) -9 swaylock"' \
+	after-resume 'swaymsg "output * dpms on"'
 
 # vim: ft=conf
