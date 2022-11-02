@@ -113,7 +113,7 @@ prompt_status() {
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$CROSS"
   [[ $UID -eq 0 ]] && symbols+="%{%F{red}%}$LIGHTNING"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{blue}%}$GEAR"
+  [[ $#jobstates -gt 0 ]] && symbols+="%{%F{blue}%}$GEAR"
 
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
