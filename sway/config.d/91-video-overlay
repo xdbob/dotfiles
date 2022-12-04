@@ -6,10 +6,10 @@
 for_window [con_mark="video_overlay"] {
 	floating enable
 	sticky enable
-	resize set 512 px 310 px
+	resize set 25 ppt 26 ppt
 	# GAP size: 20, status bar size: 20
 	# (1920 - 512 - 20) (1080 - 310 - 40)
-	move position 1388  px 730 px
+	move position 75 ppt 74 ppt
 	border none
 	inhibit_idle none # mpv will inhibit idle while playing
 	inhibit_idle fullscreen
