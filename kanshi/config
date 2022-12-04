@@ -44,7 +44,7 @@ profile cinema-shlag {
 }
 profile home-paris {
 	output "Unknown 0x5B2D 0x00000000" enable position 0,0 transform normal
-	output "Samsung Electric Company SyncMaster HSHY805110" enable mode 1280x1024@75Hz position 1920,0 transform normal
+	output "Samsung Electric Company SyncMaster HSHY805110" enable position 1920,0 transform normal
 	output "Ancor Communications Inc ASUS VG236 B1LMTF035851" enable position 3200,0 transform normal
 	exec notify-send -u low "kanshi: home-paris profile enabled"
 }
