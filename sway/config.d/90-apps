@@ -1,5 +1,9 @@
 for_window [app_id="qemu"] floating enable
 
+for_window [class="gamescope"] {
+	mark game
+	fullscreen enable
+}
 for_window [class="Steam"] {
 	floating enable
 	border pixel 0
@@ -22,8 +26,9 @@ for_window [class="battle.net.exe"] floating enable
 for_window [class="explorer.exe" title="^Wine System Tray$"] kill
 
 for_window [class="Minecraft Launcher"] floating enable
+for_window [class="nwmain-linux"] mark game
 
-for_window [class="nwmain-linux"] {
+for_window [con_mark="game" title="^Neverwinter Nights: .*"] {
 	input * dwt disabled
 }
 
