@@ -16,8 +16,8 @@ profile home {
 #}
 profile work-triple-cole {
 	output "Unknown 0x4167 0x00000000" enable position 0,0 transform normal
-	output "Unknown 2790 AMTH69A000708" enable position 1440,0 transform normal
-	output "Unknown 2790 AMTH69A000338" enable position 3360,0 transform normal
+	output "Unknown 2790 AMTH69A000708" enable position 1920,0 transform normal
+	output "Unknown 2790 AMTH69A000338" enable position 3840,0 transform normal
 	exec /home/xdbob/.bin/mako-output "Ancor Communications Inc VG248 E4LMQS100257" && notify-send -u low "kanshi: profile work (triple) enabled"
 }
 profile work-triple {

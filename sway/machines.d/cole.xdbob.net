@@ -20,7 +20,7 @@ input "1133:49291:Logitech_G502_HERO_Gaming_Mouse" {
 
 output "Unknown 0x4167 0x00000000" {
 	background ~/.config/wallpapers/space.png fill
-	scale 2
+	scale 1.5
 	subpixel rgb
 }
 
