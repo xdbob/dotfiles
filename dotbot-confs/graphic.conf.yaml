@@ -23,7 +23,7 @@
     ~/.config/sway/config.d: sway/config.d
     ~/.config/sway/env: sway/env
     ~/.config/sway/utils: sway/utils
-    ~/.config/sway/idle.yaml: sway/idle.yaml
+    ~/.config/swayidle/config: swayidle/config
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.local/share/applications/binary-ninja.desktop: shortcuts/binary-ninja.desktop
     ~/.config/wofi: wofi
