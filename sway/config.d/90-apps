@@ -28,7 +28,7 @@ for_window [class="explorer.exe" title="^Wine System Tray$"] kill
 for_window [class="Minecraft Launcher"] floating enable
 for_window [class="nwmain-linux"] mark game
 
-for_window [con_mark="game" title="^Neverwinter Nights: .*"] {
+for_window [con_mark="game"] {
 	input * dwt disabled
 }
 
