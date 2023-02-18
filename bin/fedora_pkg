@@ -5,24 +5,35 @@ if [[ ! -f "$1" ]]; then
 	exit 1
 fi
 
+SPECFILE="${1:t}"
+PKGDIR="${1:h}"
+
 TMPDIR="$(mktemp -d)"
 
 # TRAPEXIT will run for each subshell, don't use them
 function TRAPEXIT {
-	sudo rm -rf -- "$TMPDIR"
+	rm -rf -- "$TMPDIR"
 }
 
-sudo chown :mock "$TMPDIR"
-chmod g+rwx "$TMPDIR"
+cat > "${TMPDIR}/build.sh" <<-EOF
+	#!/bin/bash -xe
+	cd /src
+	dnf builddep -y "${SPECFILE}"
+	spectool -g "${SPECFILE}"
+	fedpkg --release "f\$(rpm -E %fedora)" local
+	for file in x86_64 noarch *.src.rpm; do
+		[[ -e "\${file}" ]] && mv "\${file}" /out
+	done
+EOF
+chmod u+x "${TMPDIR}/build.sh"
+mkdir "${TMPDIR}/out"
+chcon -R -t container_file_t "${TMPDIR}"
 
-BDIR="${1:h}"
+podman run -it --rm \
+	-v "${PKGDIR}:/src:O" \
+	-v "${TMPDIR}/build.sh:/usr/local/bin/build.sh:ro,exec" \
+	-v "${TMPDIR}/out:/out:rw" \
+	fedora-pkg \
+	/bin/bash
 
-for src_file in "$BDIR"/*; do
-	ln -s "${src_file:P}" "${TMPDIR}/${src_file:t}"
-done
-rm -f "${TMPDIR}/out-rpm"
-
-sudo -u packager bash -c "cd \"${TMPDIR}\" && fedpkg --release f36 local"
-
-mkdir -p out-rpm
-rsync "$TMPDIR"/**/**.rpm out-rpm
+mv "${TMPDIR}/out"/* $PWD/
