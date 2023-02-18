@@ -49,5 +49,6 @@
 	whitespace = error-all
 [sendemail]
 	smtpserver = /usr/bin/msmtp
+	smtpserveroption = --read-envelope-from
 [init]
 	defaultBranch = master
