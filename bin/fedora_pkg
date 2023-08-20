@@ -17,10 +17,20 @@ function TRAPEXIT {
 
 cat > "${TMPDIR}/build.sh" <<-EOF
 	#!/bin/bash -xe
+	shopt -s nullglob
 	cd /src
 	dnf builddep -y "${SPECFILE}"
 	spectool -g "${SPECFILE}"
-	fedpkg --release "f\$(rpm -E %fedora)" local
+
+	while ! fedpkg --release "f\$(rpm -E %fedora)" local "\$@"; do
+		# If dynamic dependencies, we try to fix and retry
+		if [ -e *.buildreqs.nosrc.rpm ]; then
+			dnf builddep -y *.buildreqs.nosrc.rpm
+			rm -f -- *.buildreqs.nosrc.rpm
+			continue
+		fi
+		break
+	done
 	for file in x86_64 noarch *.src.rpm; do
 		[[ -e "\${file}" ]] && mv "\${file}" /out
 	done
