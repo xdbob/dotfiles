@@ -18,19 +18,19 @@ input "1133:49291:Logitech_G502_HERO_Gaming_Mouse" {
 	accel_profile flat
 }
 
-output "Unknown 0x4167 0x00000000" {
+output "eDP-1" {
 	background ~/.config/wallpapers/space.png fill
 	scale 1.5
 	subpixel rgb
 }
 
-output "Unknown 2790 AMTH69A000708" {
+output "AOC 2790 AMTH69A000708" {
 	background ~/.config/wallpapers/fallout.png fill
 	subpixel rgb
 	mode 1920x1080@60Hz
 }
 
-output "Unknown 2790 AMTH69A000338" {
+output "AOC 2790 AMTH69A000338" {
 	background ~/.config/wallpapers/halo.png fill
 	subpixel rgb
 	mode 1920x1080@60Hz

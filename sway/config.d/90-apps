@@ -8,6 +8,10 @@ for_window [class="Steam"] {
 	floating enable
 	border pixel 0
 }
+for_window [class="^Shadow PC"] {
+	floating enable
+	inhibit_idle fullscreen
+}
 
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="lutris"] floating enable

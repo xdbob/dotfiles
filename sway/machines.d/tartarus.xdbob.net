@@ -58,6 +58,7 @@ output "Samsung Electric Company SyncMaster HSHY805110" {
 output "Ancor Communications Inc ASUS VG236 B1LMTF035851" {
 	background ~/.config/wallpapers/fallout.png fill
 	subpixel rgb
+	mode 1920x1080@59.940Hz
 }
 output "Unknown 2460G5 GKAH7HA036336" {
 	background ~/.config/wallpapers/fallout.png fill
