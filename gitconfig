@@ -45,6 +45,7 @@
 
 [core]
 	whitespace = error-all
+	abbrev = 12
 [apply]
 	whitespace = error-all
 [sendemail]
@@ -52,3 +53,6 @@
 	smtpserveroption = --read-envelope-from
 [init]
 	defaultBranch = master
+
+[pretty]
+	fixes = Fixes: %h (\"%s\")
