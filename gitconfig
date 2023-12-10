@@ -56,3 +56,5 @@
 
 [pretty]
 	fixes = Fixes: %h (\"%s\")
+[rerere]
+	enabled = true
