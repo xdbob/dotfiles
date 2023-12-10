@@ -4,6 +4,10 @@ input "6134:6242:Unicomp_Inc_U_AP1_4_87k_Kbrd_v7_57" {
 	xkb_options caps:ctrl_modifier,compose:ralt,altwin:swap_lalt_lwin
 }
 
+#input "7247:39:SIGMACHIP_USB_Keyboard" {
+#	xkb_options caps:ctrl_modifier,compose:ralt,altwin:swap_lalt_lwin
+#}
+
 input "1267:12849:ELAN06A0:00_04F3:3231_Touchpad" {
 	dwt enabled
 	tap enabled
@@ -48,13 +52,15 @@ output 'Samsung Electric Company SyncMaster H9XQB35145' {
 	background ~/.config/wallpapers/vga.png fill
 }
 
-output "Unknown 2590G5 0x00000F4C" {
+output "AOC 2590G5 0x00000F4C" {
 	background ~/.config/wallpapers/fallout.png fill
 	subpixel rgb
+	mode 1920x1080@75Hz
 }
-output "Unknown 2590G5 0x00000F53" {
+output "AOC 2590G5 0x00000F53" {
 	background ~/.config/wallpapers/halo.png fill
 	subpixel rgb
+	mode 1920x1080@75Hz
 }
 output "Samsung Electric Company SyncMaster HSHY805110" {
 	background ~/.config/wallpapers/inception-vga.png fill
@@ -70,6 +76,20 @@ output "Unknown 2460G5 GKAH7HA036336" {
 }
 output "Unknown 2460G5 0x00008E13" {
 	background ~/.config/wallpapers/halo.png fill
+}
+
+# Unknown serial on DP connection
+output "Microstep MSI G27CQ4 E2" {
+	background ~/.config/wallpapers/hw.jpg fill
+	subpixel rgb
+	mode 2560x1440@165Hz
+}
+
+output "Microstep MSI G27CQ4 E2 0x00000101" {
+	background ~/.config/wallpapers/hl.jpg fill
+	subpixel rgb
+	# HDMI 1.4 -> todo upgrade to hdmi 2.0 for 165Hz
+	mode 2560x1440@60Hz
 }
 
 # TODO: sync this state with swayidle somehow
