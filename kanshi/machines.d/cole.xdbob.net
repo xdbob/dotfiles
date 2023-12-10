@@ -1,0 +1,28 @@
+profile laptop-base {
+	output "Samsung Display Corp. 0x4167 Unknown" enable position 0,0 transform normal
+	exec /home/xdbob/.bin/mako-output "Samsung Display Corp. 0x4167 Unknown" && notify-send -u low "kanshi: profile base enabled"
+}
+profile work-triple {
+	output "Samsung Display Corp. 0x4167 Unknown" enable position 0,0 transform normal
+	output "AOC 2790 AMTH69A000708" enable position 1920,0 transform normal
+	output "AOC 2790 AMTH69A000338" enable position 3840,0 transform normal
+	exec /home/xdbob/.bin/mako-output "Ancor Communications Inc VG248 E4LMQS100257" && notify-send -u low "kanshi: profile work (triple) enabled"
+}
+profile mum-paris {
+	output "Samsung Display Corp. 0x4167 Unknown" enable position 0,0 transform normal
+	output "Samsung Electric Company SyncMaster HSHY805110" enable position 1920,0 transform normal
+	output "Ancor Communications Inc ASUS VG236 B1LMTF035851" enable position 3200,0 transform normal
+	exec notify-send -u low "kanshi: home-paris profile enabled"
+}
+profile home-paris {
+	output "Samsung Display Corp. 0x4167 Unknown" enable position 0,0 transform normal
+	output "AOC 2590G5 0x00000F4C" enable position 1920,0 transform normal
+	output "AOC 2590G5 0x00000F53" enable position 3840,0 transform normal
+	exec notify-send -u low "kanshi: home-paris profile enabled"
+}
+profile paris-kb-hhd {
+	output "Samsung Display Corp. 0x4167 Unknown" disable
+	output "Microstep MSI G27CQ4 E2 0x00000101" enable position 0,0 transform normal
+	output "Microstep MSI G27CQ4 E2 Unknown" enable position 2560,0 transform normal
+	exec notify-send -u low "kanshi: paris-kb-hhd profile enabled"
+}

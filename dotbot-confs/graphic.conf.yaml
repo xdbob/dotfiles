@@ -29,6 +29,7 @@
     ~/.config/wofi: wofi
     ~/.config/mako/config: mako/config
     ~/.config/kanshi/config: kanshi/config
+    ~/.config/kanshi/machines.d: kanshi/machines.d
     ~/.config/waybar/config: waybar/config
     ~/.config/environment.d/wayland.conf: environment.d/wayland.conf
     ~/.config/environment.d/vaapi.conf: environment.d/vaapi.conf
