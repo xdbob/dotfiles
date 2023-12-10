@@ -26,6 +26,13 @@
     ~/.screenrc: screenrc
     ~/.profile: profile
     ~/.config/environment.d/misc.conf: environment.d/misc.conf
+    ~/.config/systemd/user/gpg-agent.service: systemd/gpg-agent.service
+    ~/.config/systemd/user/gpg-agent.socket: systemd/gpg-agent.socket
+    ~/.config/systemd/user/gpg-agent-browser.socket: systemd/gpg-agent-browser.socket
+    ~/.config/systemd/user/gpg-agent-extra.socket: systemd/gpg-agent-extra.socket
+    ~/.config/systemd/user/gpg-agent-ssh.socket: systemd/gpg-agent-ssh.socket
+    ~/.config/systemd/user/dirmngr.service: systemd/dirmngr.service
+    ~/.config/systemd/user/dirmngr.socket: systemd/dirmngr.socket
 
 - shell:
   - [touch ~/.customrc, Creating curstomrc]
