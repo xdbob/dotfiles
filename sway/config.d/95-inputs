@@ -1,0 +1,5 @@
+input "6134:6242:Unicomp_Inc_U_AP1_4_87k_Kbrd_v7_57" {
+	xkb_options caps:ctrl_modifier,compose:ralt,altwin:swap_lalt_lwin
+}
+
+# vim: ft=conf

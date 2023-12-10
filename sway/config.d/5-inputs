@@ -3,4 +3,8 @@ input "type:keyboard" {
   xkb_options caps:ctrl_modifier,compose:ralt
 }
 
+input "type:pointer" {
+  accel_profile flat
+}
+
 # vim: ft=conf
