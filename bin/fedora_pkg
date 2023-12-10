@@ -19,7 +19,7 @@ cat > "${TMPDIR}/build.sh" <<-EOF
 	#!/bin/bash -xe
 	shopt -s nullglob
 	cd /src
-	dnf builddep -y "${SPECFILE}"
+	dnf builddep --refresh -y "${SPECFILE}"
 	spectool -g "${SPECFILE}"
 
 	while ! fedpkg --release "f\$(rpm -E %fedora)" local "\$@"; do
