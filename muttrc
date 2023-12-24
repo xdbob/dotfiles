@@ -19,6 +19,7 @@ virtual-mailboxes "Virtu"	"notmuch://?type=threads&query=tag:gmail/MLs/Virtu and
 virtual-mailboxes "QEMU"	"notmuch://?type=threads&query=tag:gmail/MLs/qemu and date:10d..now"
 virtual-mailboxes "btrfs"	"notmuch://?type=threads&query=tag:gmail/MLs/btrfs and date:14d..now"
 virtual-mailboxes "virtio"	"notmuch://?type=threads&query=tag:gmail/MLs/virtio and date:14d..now"
+virtual-mailboxes "Fedora"	"notmuch://?type=threads&query=tag:gmail/MLs/fedora and date:30d..now"
 virtual-mailboxes "all (2W)"	"notmuch://?type=threads&query=tag:gmail/All and date:7d..now"
 virtual-mailboxes "Unreads"	"notmuch://?type=threads&query=tag:unread"
 virtual-mailboxes "all"		"notmuch://?type=threads&query=tag:gmail/All"
