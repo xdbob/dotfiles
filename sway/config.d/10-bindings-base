@@ -4,10 +4,10 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 # Change brightness
-bindsym XF86MonBrightnessUp exec brightnessctl -e s 10%+
-bindsym XF86MonBrightnessDown exec brightnessctl -e s 10%-
-bindsym $mod+XF86MonBrightnessUp exec brightnessctl -e s 100%
-bindsym $mod+XF86MonBrightnessDown exec brightnessctl -e s 10%+
+bindsym --locked XF86MonBrightnessUp exec brightnessctl -e s 10%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl -e s 10%-
+bindsym --locked $mod+XF86MonBrightnessUp exec brightnessctl -e s 100%
+bindsym --locked $mod+XF86MonBrightnessDown exec brightnessctl -e s 10%
 
 # Start a terminal
 bindsym $mod+Return exec $term
