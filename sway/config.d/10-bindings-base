@@ -18,7 +18,7 @@ bindsym $mod+Shift+q kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
-bindsym $mod+p exec DMENU='wofi -d' passmenu
+bindsym $mod+p exec DMENU='wmenu -i' passmenu
 
 bindsym $md+l exec $lock
 bindsym $mod+Delete exec $lock
