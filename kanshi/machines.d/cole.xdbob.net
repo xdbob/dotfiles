@@ -23,6 +23,6 @@ profile home-paris {
 profile paris-kb-hhd {
 	output "Samsung Display Corp. 0x4167 Unknown" disable
 	output "Microstep MSI G27CQ4 E2 0x00000101" enable position 0,0 transform normal
-	output "Microstep MSI G27CQ4 E2 Unknown" enable position 2560,0 transform normal
+	output "Microstep MSI G27CQ4 E2 Unknown" enable position 2560,0 transform normal mode 2560x1440@164.554Hz
 	exec notify-send -u low "kanshi: paris-kb-hhd profile enabled"
 }
