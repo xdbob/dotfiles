@@ -42,21 +42,6 @@ SSLType IMAPS
 IMAPStore damhet-inbox
 Account damhet
 
-IMAPAccount blade
-# Address to connect to
-Host imap.gmail.com
-User antoine.damhet@shadow.tech
-AuthMechs PLAIN
-# To store the password in an encrypted file use PassCmd instead of Pass
-PassCmd "pass show mails/blade"
-#
-# Use SSL
-SSLType IMAPS
-#CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore blade-remote
-Account blade
-
 MaildirStore gmail-local
 # The trailing "/" is important
 Path ~/.mail/gmail/
@@ -98,10 +83,6 @@ Far :gmail-remote:
 Near :gmail-local:
 Patterns * ![Gmail]* !INBOX !All !Sent !Junk !blade-inbox
 
-Channel blade-inbox
-Far :blade-remote:INBOX
-Near  :gmail-local:blade-inbox
-
 Channel damhet
 Far :damhet-inbox:
 Near :damhet-local:
@@ -114,6 +95,3 @@ Group gmail
 Channel gmail-inbox
 Channel gmail-sent
 Channel gmail-junk
-
-Group pro
-Channel blade-inbox

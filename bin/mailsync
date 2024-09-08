@@ -11,7 +11,7 @@ mblabelsync pre
 if [ $# -eq 0 ]; then
 	#mbsync -a
 	# sync only relevant mails by default
-	mbsync gmail pro damhet xdbob
+	mbsync gmail damhet xdbob
 else
 	mbsync "$@"
 fi
