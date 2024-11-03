@@ -25,7 +25,7 @@ output 'Samsung Electric Company SyncMaster H9XQB35145' {
 output "AOC 2590G5 0x00000F4C" {
 	background ~/.config/wallpapers/fallout.png fill
 	subpixel rgb
-	mode 1920x1080@75Hz
+	mode 1920x1080@60Hz
 }
 
 output "AOC 2590G5 0x00000F53" {
