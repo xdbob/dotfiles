@@ -35,3 +35,5 @@
     ~/.config/environment.d/vaapi.conf: environment.d/vaapi.conf
     ~/.config/environment.d/firefox.conf: environment.d/firefox.conf
     ~/.config/wireplumber/wireplumber.conf.d: wireplumber
+    ~/.config/gtk-3.0/settings.ini: gtk/settings.ini
+    ~/.config/gtk-4.0/settings.ini: gtk/settings.ini
