@@ -13,6 +13,8 @@ for_window [class="^Shadow PC"] {
 	inhibit_idle fullscreen
 }
 
+for_window [app_id="org.mozilla.firefox" title="^Extension: \(Aria2 Integration\)"] mark popup
+
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="lutris"] floating enable
 
@@ -35,5 +37,7 @@ for_window [class="nwmain-linux"] mark game
 for_window [con_mark="game"] {
 	input * dwt disabled
 }
+
+for_window [con_mark="popup"] floating enable
 
 # vim: ft=conf
