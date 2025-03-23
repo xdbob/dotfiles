@@ -105,7 +105,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "interface": "enp*", // (Optional) To force the use of this interface
+        "interface": "e*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
         "format-linked": "{ifname} (No IP) ⛔",
