@@ -3,7 +3,9 @@
         relink: true
         create: true
 
-- clean: ['~']
+- clean:
+  - '~'
+  - ~/.config/alacritty
 
 - link:
     ~/.i3/config: i3/config
@@ -24,7 +26,7 @@
     ~/.config/sway/env: sway/env
     ~/.config/sway/utils: sway/utils
     ~/.config/swayidle/config: swayidle/config
-    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.local/share/applications/binary-ninja.desktop: shortcuts/binary-ninja.desktop
     ~/.config/wofi: wofi
     ~/.config/mako/config: mako/config
