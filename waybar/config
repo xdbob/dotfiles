@@ -113,7 +113,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "network#wlan": {
-        "interface": "w*", // (Optional) To force the use of this interface
+        "interface": "wl*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
         "format-linked": "{ifname} (No IP) ⛔",
