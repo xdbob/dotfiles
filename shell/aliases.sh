@@ -21,7 +21,7 @@ alias make='nice -n 1 make'
 alias makepkg='nice -n 1 makepkg'
 alias lynx='lynx -vikeys'
 
-alias weather='curl https://wttr.in/'
+alias weather='curl https://wttr.in/Paris'
 
 function lessgrep() {
 	grep -rn --color=always "$@" | less -R
